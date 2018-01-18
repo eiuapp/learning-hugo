@@ -1,0 +1,35 @@
+{
+  "gitbook": ">=3.2.0",
+  "description": "Hugo学习笔记",
+  "language": "zh-hans",
+  "author": "Sky Ao",
+  "extension": null,
+  "generator": "site",
+  "links" : {
+    "sidebar" : {
+        "Sky's Website": "http://skyao.io"
+    }
+  },
+  "structure" : {
+    },
+  "plugins": [
+    "-search",
+    "-sharing",
+    "edit-link",
+    "github-buttons@2.1.0"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+        "base": "https://github.com/skyao/learning-hugo/edit/master",
+        "label": "Edit"
+    },
+    "github-buttons": {
+        "repo": "skyao/learning-hugo",
+        "types": ["star"],
+        "size": "small"
+    }
+  },
+  "title": "Hugo学习笔记",
+  "variables": {
+  }
+}
