@@ -6,7 +6,7 @@ Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、�
 
 - 在线阅读
 	- [国外服务器][gitbook]：gitbook提供的托管，服务器在国外，速度比较慢，偶尔被墙，HTTPS
-	- [国内服务器](qcloud)：腾讯云加速，国内网速极快，非HTTPS
+	- [国内服务器][qcloud]：腾讯云加速，国内网速极快，非HTTPS
 - [下载pdf格式][pdf]
 - [下载mobi格式][mobi]
 - [下载epub格式][epub]
