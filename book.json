@@ -2,12 +2,12 @@
   "gitbook": ">=3.2.0",
   "description": "Hugo学习笔记",
   "language": "zh-hans",
-  "author": "Sky Ao",
+  "author": "敖小剑",
   "extension": null,
   "generator": "site",
   "links" : {
     "sidebar" : {
-        "Sky's Website": "http://skyao.io"
+        "敖小剑的博客": "https://skyao.io"
     }
   },
   "structure" : {
