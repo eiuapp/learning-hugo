@@ -57,5 +57,14 @@ sudo service nginx restart
 
 ## 设置自动更新证书
 
-TBD
+由于Let's Encrypt证书的有效期为90天，所有我们需要定期更新以避免证书过期，通常Let's Encrypt会发邮件提醒的。
+
+更新操作如下：
+
+```bash
+# 更新证书
+sudo letsencrypt renew
+# 重新启动nginx
+sudo systemctl restart nginx
+```
 
