@@ -6,11 +6,8 @@
 
 发现问题出现在页面上的一些静态文件下载，使用的路径居然是`https://cdnjs.cloudflare.com/××`。
 
-```xml
+```html
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
 ```
 
 cloudflare网站是在国外，访问速度慢，而且非常不稳定：经常被墙。导致页面加载的速度慢，有时还会出现无法打开页面的问题。
@@ -37,58 +34,36 @@ cloudflare网站是在国外，访问速度慢，而且非常不稳定：经常�
 
 在`themes/academic/static`目录下建立`local`目录，然后将前面涉及到的所有js/css文件都保存好。
 
-### 更新submodule
+### 更新academic插件
 
-`theme/academic`是git的submodule，默认是指向
+默认是采用git的submodule来载入academic 的代码，但是实际使用中发现submodule非常的不方便，因此放弃submodule，采用直接复制文件的方式。
 
-https://github.com/gcushen/hugo-academic
+初始方法：
 
-我们需要修改为指向到我们fork并修改了的仓库。
+```bash
+cd skyao
+git clone git@github.com:skyao/hugo-academic.git
+git clone git@github.com:skyao/skyao.io.git
+cd skyao.io
+sh update_academic.sh
+hugo server
+```
 
-没有找到git中更新submodule地址的命令，只能用笨办法，先删除再添加。
+## 更新academic版本
 
-1. 删除现有submodule
+当academic版本更新时，需要跟着更新。
 
-	```bash
-    git rm --cached themes/academic
-	rm -rf themes/academic
-	rm .gitmodules
-    ```
+### 更新fork的仓库
 
-	然后修改`.git/config`文件，删除对应的submodule信息：
+```bash
+git remote add upstream git://github.com/gcushen/hugo-academic.git
+git fetch upstream
+git merge upstream/master
+```
 
-	```bash
-	[submodule "themes/academic"]
-        active = true
-        url = git://github.com/skyao/hugo-academic.git
-	```
+### 测试新版本
 
-	然后commit/push到远程git仓库。
+将`themes/academic`目录下的内容删除，然后复制hugo-academic下的所有内容到`themes/academic`目录下。
 
-2. 删除本地仓库，重新clone
-
-3. 添加新的submodule
-
-    将我们fork的theme仓库添加进来：
-
-    ```bash
-    git submodule add git://github.com/skyao/hugo-academic.git themes/academic
-    ```
-
-    然后执行：
-
-    - `git submodule init`： 来初始化本地配置文件，
-
-    - `git submodule update`： 从某个项目拉取所有数据并检出你上层项目里所列的合适的提交：
-
-4. 重新构建hugo
-
-	用新的主题重新构建hugo。
-
-## 更新jenkins build
-
-登录jenkins所在机器，进入`/var/lib/jenkins/workspace/`，直接删除对应job的目录。
-
-然后在脚本中，在build之前，增加一行`git submodule update --init --recursive`来初始化submodule。（备注：build成功之后，以后可以不用再次初始化，可以注释掉这行）
-
+然后边修改边确认，等待修改完成测试通过，再将修改好的内容同步回fork的hugo-academic git仓库。
 
