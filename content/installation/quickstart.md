@@ -1,4 +1,11 @@
-# 快速开始
+---
+date: 2018-09-10T21:07:13+08:00
+title: 快速开始
+weight: 21
+menu:
+  main:
+    parent: "installation"
+---
 
 ## 新建站点
 

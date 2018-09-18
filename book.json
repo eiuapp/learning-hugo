@@ -14,20 +14,9 @@
     },
   "plugins": [
     "-search",
-    "-sharing",
-    "edit-link",
-    "github-buttons@2.1.0"
+    "-sharing"
   ],
   "pluginsConfig": {
-    "edit-link": {
-        "base": "https://github.com/skyao/learning-hugo/edit/master",
-        "label": "Edit"
-    },
-    "github-buttons": {
-        "repo": "skyao/learning-hugo",
-        "types": ["star"],
-        "size": "small"
-    }
   },
   "title": "Hugo学习笔记",
   "variables": {

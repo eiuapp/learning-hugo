@@ -1,4 +1,11 @@
-# 百度统计
+---
+date: 2018-09-10T21:07:13+08:00
+title: 百度统计
+weight: 31
+menu:
+  main:
+    parent: "academic"
+---
 
 由于google统计容易被墙，不适合国情，只好放弃。
 
