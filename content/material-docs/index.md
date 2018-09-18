@@ -72,12 +72,12 @@ https://github.com/skyao/hugo-material-docs
 
 5. 修改新站点的`config.toml`文件
 
-  以下内容必须修改：
+	以下内容必须修改：
 
-  ```toml
-  title = "学习笔记"
-  repo_url = "https://github.com/skyao/hugo-material-docs"
-  ```
+	```toml
+	title = "学习笔记"
+	repo_url = "https://github.com/skyao/hugo-material-docs"
+	```
 
 6. 此时已经开始运行`hogo server`命令来查看新站点的内容了
 

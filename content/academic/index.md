@@ -1,7 +1,7 @@
 ---
 date: 2018-09-09T21:07:13+01:00
 title: academic
-weight: 30
+weight: 300
 ---
 
 academic官网：
