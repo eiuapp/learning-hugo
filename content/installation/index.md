@@ -1,7 +1,7 @@
 ---
 date: 2018-09-10T21:07:13+08:00
 title: 安装
-weight: 20
+weight: 200
 ---
 
 安装hugo之前，先安装好golang。
