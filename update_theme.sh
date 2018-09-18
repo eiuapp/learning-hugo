@@ -12,7 +12,7 @@ if [ -d "themes/hugo-material-docs" ];then
   cd ../../
 else
   echo 'Directoy "themes/hugo-material-docs" not found, do "git clone"'
-  git clone git@github.com:skyao/hugo-material-docs.git themes/hugo-material-docs
+  git clone https://github.com/skyao/hugo-material-docs.git themes/hugo-material-docs
 fi
 
 
