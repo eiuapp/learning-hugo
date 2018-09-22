@@ -4,7 +4,13 @@ title: 安装
 weight: 200
 ---
 
+## 准备工作
+
+### 安装golang
+
 安装hugo之前，先安装好golang。
+
+目前新版本的hugo如0.48版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
 
 ## Linux安装
 
@@ -30,13 +36,15 @@ Hugo Static Site Generator v0.48 linux/amd64 BuildDate: 2018-08-29T06:33:51Z
 以下是jenkins自动生成并发布到nginx的简单脚本：
 
 ```bash
-#git submodule update --init --recursive
+sh update_academic.sh
 
 # clean 
 cd /var/www/skyao/
-rm -rf 404.html home index.xml project sitemap.xml tags categories img js publication site.webmanifest talk files index.html post publication_types styles.css
+# 删除所有文件和文件夹，但排除以"learning-"前缀开头的
+rm -rf `ls | grep -v "learning-"`
 cd /var/lib/jenkins/workspace/skyao.io/
 
-hugo --theme=academic --baseUrl="http://skyao.io/" -d "/var/www/skyao/"
+# 需要明确指定baseUrl
+hugo --baseUrl="https://skyao.io/" -d "/var/www/skyao/"
 ```
 

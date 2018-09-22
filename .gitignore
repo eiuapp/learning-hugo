@@ -4,4 +4,4 @@ _book/
 node_modules/
 public/
 themes/
-
+update_theme.sh

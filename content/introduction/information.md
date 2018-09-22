@@ -17,5 +17,5 @@ menu:
 
 ## 学习资料
 
-
+- [Hogo handbook](https://jimmysong.io/hugo-handbook/)
 
