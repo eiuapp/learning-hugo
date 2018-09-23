@@ -2,6 +2,11 @@
 date: 2018-09-09T21:07:13+01:00
 title: academic主题
 weight: 300
+keywords:
+- theme
+- academic
+- academic主题
+description : "介绍hugo的academic主题，使用方式和订制化"
 ---
 
 ## 主题介绍

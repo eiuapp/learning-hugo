@@ -5,6 +5,10 @@ weight: 102
 menu:
   main:
     parent: "introduction"
+keywords:
+- 主题
+- hugo主题
+description : "列举Hugo的主题"
 ---
 
 ## 门户类

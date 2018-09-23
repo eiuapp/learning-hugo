@@ -1,16 +1,22 @@
 baseurl = "http://localhost:1313/"
-languageCode = "en-us"
+languageCode = "zh-cn"
 title = "Hugo学习笔记"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
+enableRobotsTXT = true
+preserveTaxonomyNames = true
+disablePathToLower = true
+
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 
 [params]
 	# General information
 	author = "敖小剑"
-	description = "Hugo学习笔记"
+	subtitle = "记录hugo的基本使用和常用技巧，还有推荐的hugo主题。"
+	keywords = "hugo,学习笔记,敖小剑,主题"
+	description = "Hugo是由Go语言实现的静态网站生成器。这份hugo学习笔记，记录hugo的基本使用和常用技巧，还有推荐的hugo主题。"
 	copyright = "版权所有，转载请注明出处"
 
 	# Repository
@@ -78,3 +84,5 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	fractions = true
 	smartDashes = true
 	plainIDAnchors = true
+
+

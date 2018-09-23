@@ -2,6 +2,12 @@
 date: 2018-09-08T21:07:13+01:00
 title: 前言
 weight: 1
+keywords:
+- hugo
+- 学习笔记
+- hugo学习笔记
+- 静态网站生成器
+description : "介绍Hugo学习笔记的基本资料和访问方式"
 ---
 
 ![](introduction/images/hugo-logo.png)

@@ -5,6 +5,12 @@ weight: 101
 menu:
   main:
     parent: "introduction"
+keywords:
+- 资料
+- 官方资料
+- 社区资料
+- 学习资料
+description : "收集Hugo的各种资料"
 ---
 
 ## 官方资料

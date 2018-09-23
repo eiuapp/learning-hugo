@@ -2,6 +2,13 @@
 date: 2018-09-09T21:07:13+01:00
 title: 介绍
 weight: 100
+keywords:
+- hugo
+- Hugo是什么
+- 为什么用Hugo
+- hexo
+- gitbook
+description : "介绍Hugo，以及为什么要使用hugo"
 ---
 
 ![](images/hugo-logo.png)

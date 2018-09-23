@@ -2,6 +2,12 @@
 date: 2018-09-09T21:07:13+01:00
 title: material-docs
 weight: 400
+keywords:
+- theme
+- material-docs
+- material-docs主题
+- hugo-material-docs
+description : "介绍hugo的material-docs主题，使用方式和订制化"
 ---
 
 ## 主题介绍
