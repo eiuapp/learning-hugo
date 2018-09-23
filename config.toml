@@ -4,7 +4,6 @@ title = "Hugo学习笔记"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
-enableRobotsTXT = true
 preserveTaxonomyNames = true
 disablePathToLower = true
 
@@ -58,19 +57,19 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 [[menu.main]]
 	name   = "介绍"
 	identifier = "introduction"
-	url    = "introduction/"
+	url    = "/introduction/"
 	weight = 100
 
 [[menu.main]]
 	name   = "安装"
 	identifier = "installation"
-	url    = "installation/"
+	url    = "/installation/"
 	weight = 200
 
 [[menu.main]]
 	name   = "主题"
 	identifier = "theme"
-	url    = "theme/"
+	url    = "/theme/"
 	weight = 300
 
 [blackfriday]

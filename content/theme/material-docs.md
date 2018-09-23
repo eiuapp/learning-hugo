@@ -162,20 +162,48 @@ https://github.com/skyao/hugo-material-docs
 	update_theme.sh
 	```
 
+## 发现并修复的问题
+
+### 主菜单上当前页的H2菜单不显示
+
+这个主题有个特性，可以在主菜单中，在当前页面下会自动增加所有H2 titile作为子菜单。这个特性相当于自动增加了一级菜单，对于内容长的页面很有用。
+
+发现，如果baseURL是完全域名如"https://skyao.io/"或者"http://localhost:1313"时，工作正常。但是，如果baseURL是"https://skyao.io/learning-hugo/"或者"http://localhost:1313/learning-hugo/"这样带有子目录时，就会失效。
+
+检查发现，是`themes/hugo-material-docs/layouts/partials`下的`nav_link.html`中，这段代码判断错误：
+
+```html
+{{ $currentMenuEntry := .Scratch.Get "currentMenuEntry" }}
+{{ $isCurrent := eq .Permalink ($currentMenuEntry.URL | absURL | printf "%s") }}
+```
+
+这里判断菜单项是否是当前页面时，判断的方式是将当前页面的实际URL Permalink(内容如`https://skyao.io/learning-hugo/installation/seo/`) 和菜单项URL地址`$currentMenuEntry.URL`(内容如`/installation/seo/`)进行比较，如果一致则表示是当前页面。为了得到菜单项URL地址的绝对路径，需要使用absURL函数，如`($currentMenuEntry.URL | absURL | printf "%s")`。
+
+但是这里的absURL函数输出结果居然是不正确的！baseURL为`https://skyao.io/learning-hugo/` ，参数为 `/installation/seo/`时，函数absURL的结果居然是`https://skyao.io/installation/seo/`，`learning-hugo/`子目录消失了。
+
+修改方式为通过获取Permalink地址的相对路径，然后和`$currentMenuEntry.URL`比较，这样就避开了absURL函数的问题：
+
+```html
+{{ $currentMenuEntry := .Scratch.Get "currentMenuEntry" }}
+{{ $isCurrent := eq ( .Permalink | relURL | printf "%s" ) $currentMenuEntry.URL }}
+```
+
+这里还发现一个要注意的地方，在config.toml文件中，主菜单项的配置，url一定要用"/"开头，即：
+
+```toml
+[[menu.main]]
+	name   = "安装"
+	identifier = "installation"
+	url    = "/installation/"		# 这里一定不要设置为"installation/"
+	weight = 200
+```
+
+测试验证OK！
+
 ## 待解决的问题
 
-存在以下问题：
+### 主题已经不再更新
 
-1. 主题已经不再更新
-	
-    作者已经消失，一年多没有更新，包括PR也没有人合并。
-	
-2. 在移动端，底部上一页显示有问题
-	
-    只显示箭头，不显示文字内容，但是链接是存在的，点击可以去往上一个。
+作者已经消失，一年多没有更新，包括PR也没有人合并。
 
-    测试过多个浏览器，包括chrome，搜狗浏览器，UC浏览器，都是如此。
-
-    在PC上一般没有问题，但是如果将窗口的宽度缩小到一定程度，也会出现这个现象。猜测是为了避免上一页和下一页的文字同时现实会放不下，所以估计隐藏了上一页的文字只保留箭头。如果是这样，那么就是一种特别精妙的设计而不是缺陷了。
-    
 希望后面有人继续维护这个主题。
