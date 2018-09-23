@@ -1,15 +1,17 @@
 ---
 date: 2018-09-09T21:07:13+08:00
-title: 主题
+title: 主题列表
 weight: 102
 menu:
   main:
-    parent: "introduction"
+    parent: "theme"
 keywords:
 - 主题
 - hugo主题
-description : "列举Hugo的主题"
+description : "列举个人觉得不错的Hugo主题"
 ---
+
+在这里列出一些个人觉得不错的Hugo主题。
 
 ## 门户类
 

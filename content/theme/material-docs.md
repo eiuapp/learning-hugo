@@ -1,7 +1,10 @@
 ---
 date: 2018-09-09T21:07:13+01:00
-title: material-docs
-weight: 400
+title: material-docs主题
+menu:
+  main:
+    parent: "theme"
+weight: 320
 keywords:
 - theme
 - material-docs
@@ -18,7 +21,7 @@ http://themes.gohugo.io/theme/material-docs/
 
 这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。
 
-我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hogo学习笔记用的就是此主题。
+我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hugo学习笔记用的就是此主题。
 
 ## 准备工作
 

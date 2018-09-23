@@ -1,7 +1,10 @@
 ---
 date: 2018-09-09T21:07:13+01:00
 title: academic主题
-weight: 300
+menu:
+  main:
+    parent: "theme"
+weight: 310
 keywords:
 - theme
 - academic
