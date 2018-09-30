@@ -6,8 +6,6 @@ keywords:
 - hugo
 - Hugo是什么
 - 为什么用Hugo
-- hexo
-- gitbook
 description : "介绍Hugo，以及为什么要使用hugo"
 ---
 

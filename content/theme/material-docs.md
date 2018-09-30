@@ -162,6 +162,55 @@ https://github.com/skyao/hugo-material-docs
 	update_theme.sh
 	```
 
+## 扩展和增强
+
+### 三次菜单和自动隐藏
+
+默认，material-docs主题的主菜单，只显示两层。修改代码之后可以支持三层菜单显示，以应对笔记内容比较多的情况。
+
+但是也引发了另外一个问题，内容比较多的笔记，三级菜单一起展开，主菜单项的内容实在太多了。而且material-docs主题的主菜单是每个页面都嵌入的，不是iframe那种，导致菜单项比很多页面的实际内容都要多。因此考虑实现菜单项的自动隐藏，当菜单项（或者子项）没有被打开时，就只打开一级菜单。
+
+需要修改`hugo-material-docs/layouts/partials/nav.html`文件：
+
+```html
+{{ $currentNode := . }}
+
+{{ range .Site.Menus.main.ByWeight }}
+{{ $.Scratch.Set "currentMenuEntry" . }}
+<li>
+  {{ if .HasChildren }}
+    {{ partial "nav_link" $currentNode }}
+{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}
+    <ul>
+      {{ range .Children }}
+        {{ $.Scratch.Set "currentMenuEntry" . }}
+        <li>
+          {{ if .HasChildren }}
+            {{ partial "nav_link" $currentNode }}
+{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}
+            <ul>
+              {{ range .Children }}
+                {{ $.Scratch.Set "currentMenuEntry" . }}
+                {{ partial "nav_link" $currentNode }}
+              {{ end }}
+            </ul>
+{{ end }}
+          {{ else }}
+            {{ partial "nav_link" $currentNode }}
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+{{ end }}
+  {{ else }}
+    {{ partial "nav_link" $currentNode }}
+  {{ end }}
+</li>
+{{ end }}
+```
+
+因为不熟悉代码，暂时通过写笨代码的方式实现了第三级菜单，最好是能用递归的方式，这样就可以实现无限级的菜单了。`{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}` 用来判断是当前菜单或者当前菜单的子项是否打开，这个判断在第二级和第三级菜单中执行。
+
 ## 发现并修复的问题
 
 ### 主菜单上当前页的H2菜单不显示
