@@ -2,6 +2,9 @@
 date: 2018-09-10T21:07:13+08:00
 title: 安装
 weight: 200
+keywords:
+- Hugo安装
+description : "详细介绍Hugo的安装"
 ---
 
 ## 准备工作

@@ -5,6 +5,10 @@ weight: 202
 menu:
   main:
     parent: "installation"
+keywords:
+- HTTPS支持
+- 开启HTTPS
+description : "详细介绍如何为Hugo增加HTTPS支持"
 ---
 
 参考文章：

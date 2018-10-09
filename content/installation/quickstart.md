@@ -5,6 +5,9 @@ weight: 201
 menu:
   main:
     parent: "installation"
+keywords:
+- Hugo快速开始
+description : "详细介绍通过Hugo快速开始搭建一个站点"
 ---
 
 ## 新建站点
