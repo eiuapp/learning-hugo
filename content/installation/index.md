@@ -19,19 +19,19 @@ description : "详细介绍Hugo的安装"
 
 在[Hugo Releases](https://github.com/spf13/hugo/releases)页面下载对应操作系统版本的安装包，如：
 
-- hugo_0.48_Linux-64bit.deb
+- hugo_0.54_Linux-64bit.deb
 
 deb文件直接安装即可。
 
 ```bash
-sudo dpkg -i hugo_0.48_Linux-64bit.deb 
+sudo dpkg -i hugo_0.54_Linux-64bit.deb 
 ```
 
 验证安装：
 
 ```bash
 $ hugo version
-Hugo Static Site Generator v0.48 linux/amd64 BuildDate: 2018-08-29T06:33:51Z
+Hugo Static Site Generator v0.54.0-B1A82C61 linux/amd64 BuildDate: 2019-02-01T09:40:34Z
 ```
 
 ## 自动发布

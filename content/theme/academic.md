@@ -23,24 +23,27 @@ academic是一个特别适合搭建内容相对比较丰富的网站的主题，
 
 ### git仓库准备
 
-以建立skyao.io这个网站为例，fork 两个github项目：
+以建立skyao.io这个网站为例，fork github项目：
 
-1. https://github.com/gcushen/hugo-academic: 修改仓库名为hugo-academic-cn，这是自行订制的主题仓库，加cn后缀名以示区别。
+1. https://github.com/gcushen/hugo-academic: 修改仓库名为hugo-academic，这是自行订制的主题仓库，加cn后缀名以示区别。
 2. https://github.com/sourcethemes/academic-kickstart: 修改仓库名为skyao.io，这是存放站点内容的仓库，为了方便起见，从官方的kickstart仓库开始改起，也方便未来保持更新。
 
-### 不使用git的submodule
+> 备注：实际证明，academic的版本变化非常大，fork出来之后，再修改，到升级版本时到处是冲突，极易出错，很难正确处理。最后还是不得不从头来过：取到最新版本，然后手工将原有的改动重新再做一遍。
 
-clone下来skyao.io的仓库到本地：
+kickstart 项目就没有必要再fork了，hugo-academic 还是需要 fork 的。
 
-```bash
-git clone git@github.com:skyao/skyao.io.git
-```
+### 本地仓库准备
 
-在`skyao.io`目录下，删除`themes`
+clone下来 kickstart 的仓库到本地：
 
 ```bash
-cd skyao.io.git
-rm -rf themes/
+# 本地准备好academic主题仓库
+git clone https://github.com/skyao/hugo-academic.git
+# 直接获取kickstart的内容作为建站的基础
+git clone https://github.com/sourcethemes/academic-kickstart.git skyao.io
+cd skyao.io/
+rm -rf .git .gitmodules
+rm -r themes/academic/
 ```
 
 修改`.gitignore`文件内容如下：
@@ -50,8 +53,6 @@ rm -rf themes/
 !.gitignore
 public/
 themes/
-content/post/images/
-content/publication/images/
 ```
 
 修改`update_academic.sh`文件内容如下：
@@ -70,172 +71,232 @@ if [ -d "themes/academic" ];then
   git pull
   cd ../../
 else
-  echo 'Directoy "themes/academic" not found, do "git clone"'
-  git clone https://github.com/skyao/hugo-academic-cn.git themes/academic
-  #git clone git@github.com:skyao/hugo-academic-cn.git themes/academic
+  echo 'Directoy "themes/academic" not found, do "ln -s"'
+  cd themes
+  ln -s ../../hugo-academic academic
+  cd ../
 fi
 ```
 
-执行命令 `sh update_academic.sh` 获取 academic 主题文件。此时`themes/academic`是我们订制的主题内容，此时两个git仓库都可以分别提交内容，非常方便修改。
+执行命令 `sh update_academic.sh` 获取 academic 主题文件(实际是一个ln过程)。此时`themes/academic`是我们订制的主题内容，此时两个git仓库都可以分别提交内容，而且实时生效，非常方便本地修改。
 
 ## 创建网站
 
-###### 使用 exampleSite 初始化
+### 使用 exampleSite 初始化
 
 删除｀skyao.io｀目录下的config.toml文件和content/static目录，然后从｀themes/academic/exampleSite｀下的这三个文件和目录复制到｀skyao.io｀目录下。执行`hugo server`命令，就可以通过浏览器访问 http://localhost:1313/ 看到示例站点。
 
 我们从这个基础开始进行修改和订制。
 
-### 修改网站的基本信息
+## 修改配置
 
-修改config.toml文件
+注意新版本的hugo将原来的单个config.toml配置文件拆分为多个配置文件，这些配置文件在 config/_default 目录下。
+
+### 修改config.toml文件
 
 ```toml
 title = "敖小剑的博客"
-copyright = "skyao.io &copy; 2018"
-paginate = 50 # 默认10太小
-googleAnalytics = "17048c9d4209e5d08a9ae5b0b4160808" # 开始百度统计，注意不是google统计，后面会详细讲
+copyright = "skyao.io &copy; 2019"
+googleAnalytics = "17048c9d4209e5d08a9ae5b0b4160808"
+
+# 修改默认语言，需要对应的在languages.toml添加中文
+defaultContentLanguage = "zh"
 hasCJKLanguage = true
 
-name = "敖小剑"
-role = "资深码农"
-organizations = [ { name = "蚂蚁金服", url = "https://www.antfin.com/" }, { name="中间件团队", url="" } ]
-avatar = "portrait.jpg"  # 内容不用改，需要找一张400*400的图片，覆盖掉`static/img/portrait.jpg`文件
-email = "aoxiaojian@hotmail.com"
-address = "广州市天河区广电平云广场B塔18楼"
-office_hours = ""
-phone = ""
-skype = ""
-telegram = ""
+paginate = 20
+```
 
-  map = 0 # 最后还是决定关闭地图现实，太影响页面打开速度
-  map_api_key = "AIza××" # 需要在google cloud platform申请
-  latitude = "23.1186075" # 在google地图上找到目的地址，浏览器地址栏上会显示详细的坐标数值
-  longitude = "113.3510883"
-  zoom = 14
-  
-  color_theme = "1950s"
-  font = "default"
-  
-  
-  twitter = "SkyAoXiaojian"
-  date_format = "2006-01-02"
-  time_format = "15:04"
-  reading_time = false # 阅读时间预测，不准，不开启
-  highlight_languages = ["java", "bash","go", "xml", "json","yaml"] # 具体支持哪些语言见 https://cdnjs.com/libraries/highlight.js/
-  
-    publication_types = [
-    '未分组',  # 0
-    '会议记录',  # 1
-    '期刊文章',  # 2
-    '手稿',  # 3
-    '技术报告',  # 4
-    '书籍',  # 5
-    '书籍摘抄'  # 6
+### 修改languages.toml
+
+先只替换默认语言为中文，暂时不启用多语言版本。
+
+```toml
+# 注释掉en
+#[en]
+#  languageCode = "en-us"
+
+# 添加中文
+[zh]
+  languageCode = "zh-Hans"
+```
+
+如果要调整页面上的字眼，需要修改主题文件中的 i18n 文件，如`themes/academic/i18n/zh.yaml`。
+
+如果要修改 publication_types 的显示，需要参考 `themes/academic/layouts/partials` 下 pub_types.html 的内容，在 `themes/academic/i18n/zh.yaml` 文件中加入对应的内容：
+
+```toml
+- id: pub_uncat
+  translation: 未分组
+- id: pub_conf
+  translation: 会议记录
+- id: pub_journal
+  translation: 期刊文章
+- id: pub_manuscript
+  translation: 手稿
+- id: pub_report
+  translation: 技术报告
+- id: pub_book
+  translation: 书籍
+- id: pub_book_section
+  translation: 书籍摘抄
+```
+
+
+
+### 修改params.toml
+
+```toml
+color_theme = "1950s"
+
+description = "敖小剑的个人技术博客网站，主要关注服务网格,serverless,kubernetes,微服务等云原生技术。"
+
+# 这个还不知道该如何设置
+sharing_image = ""
+
+twitter = "SkyAoXiaojian"
+
+date_format = "2006-01-02"
+time_format = "15:04"
+
+email = "aoxiaojian@hotmail.com"
+phone = ""
+address = "广州市天河区广电平云广场B塔15楼"
+office_hours = ""
+
+contact_links = [
+  {icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/SkyAoXiaojian"},
+  # {icon = "skype", icon_pack = "fab", name = "Skype Me", link = "skype:echo123?call"},
+  # {icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
+  # {icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
+  # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
   ]
   
-  [params.publications]
-  date_format = "2006-01-02"
+  reading_time = false
+  comment_count = false
   
-  ## 图标的代码需要在 https://fontawesome.com 网站上查找
-  [[params.social]]
-    icon = "envelope"
-    icon_pack = "fas"
-    link = "mailto:aoxiaojian@hotmail.com"
+  [publications]
+  date_format = "2006-01-02"
+```
 
-  [[params.social]]
-    icon = "twitter"
-    icon_pack = "fab"
-    link = "//twitter.com/SkyAoXiaojian"
+### 修改menus.toml
 
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fab"
-    link = "//github.com/skyao"
-
-  [[params.social]]
-    icon = "git"
-    icon_pack = "fab"
-    link = "//legacy.gitbook.com/@skyao"
-
-  [[params.social]]
-    icon = "weibo"
-    icon_pack = "fab"
-    link = "//weibo.com/aoxiaojian"
-
-  [[params.social]]
-    icon = "youtube"
-    icon_pack = "fab"
-    link = "//www.youtube.com/channel/UCKeIYzzIeOtVR1iSfAdRBqQ"
-
-
-
-[[menu.main]]
+```toml
+[[main]]
   name = "首页"
   url = "#about"
   weight = 1
 
-[[menu.main]]
+[[main]]
   name = "演讲分享"
-  url = "#publications_selected"
+  url = "/talk/"
   weight = 2
 
-[[menu.main]]
-  name = "技术博客"
-  url = "#posts"
+[[main]]
+  name = "出版作品"
+  url = "/publication/"
   weight = 3
 
-[[menu.main]]
-  name = "开源项目"
-  url = "#projects"
+[[main]]
+  name = "技术博客"
+  url = "/post/"
   weight = 4
 
-#[[menu.main]] ## 教程这块要研究一下具体怎么用
-#  name = "Tutorials"
-#  url = "/tutorial/"
-#  weight = 5
+[[main]]
+  name = "开源项目"
+  url = "#projects"
+  weight = 5
 
-[[menu.main]]
+[[main]]
+  name = "学习笔记"
+  url = "/learning/"
+  weight = 6
+
+[[main]]
+  name = "内容标签"
+  url = "#tags"
+  weight = 7
+
+[[main]]
   name = "和我联系"
   url = "#contact"
-  weight = 6
-  
-  
+  weight = 8
 ```
 
-### 修改首页内容
+## 订制首页
 
-`skyao.io/content/home` 目录下，修改 about.md ：
+需要修改的文件在 content/home 目录下。
+
+关闭部分不需要的内容（设置active = false）：
+
+- accomplishments.md
+- experience.md
+- skills.md
+- teaching.md
+
+### about.md
 
 ```toml
-[interests]
-  interests = [
+title = "简介"
+```
+
+然后修改 author/admin 下的文件，如替换头像，修改_index.md:
+
+```toml
+name = "敖小剑"
+role = "中年码农"
+organizations = [ { name = "Dreamfly.io", url = "https://dreamfly.io" } ]
+bio = "我目前研究的方向主要在微服务/Microservice、服务网格/Servicemesh、无服务器架构/Serverless等和云原生/Cloud Native相关的领域，欢迎交流和指导"
+email = "aoxiaojian@hotmail.com"
+interests = [
     "微服务/Micro Service",
     "服务网格/Service Mesh",
     "无服务器架构/Serverless",
     "云原生/Cloud Native",
     "敏捷/DevOps"
-  ]
+]
 
 [[education.courses]] # 删除
 
-# 删除原有的内容，直接覆盖
-# 简介 （这里也是可以改的）
+## 图标的代码需要在 https://fontawesome.com 网站上查找
+[[social]]
+  icon = "envelope"
+  icon_pack = "fas"
+  link = "mailto:aoxiaojian@hotmail.com"  # For a direct email link, use "mailto:test@example.org".
 
+[[social]]
+  icon = "twitter"
+  icon_pack = "fab"
+  link = "https://twitter.com/SkyAoXiaojian"
+
+[[social]]
+  icon = "github"
+  icon_pack = "fab"
+  link = "https://github.com/skyao"
+
+[[social]]
+  icon = "git"
+  icon_pack = "fab"
+  link = "//legacy.gitbook.com/@skyao"
+
+[[social]]
+  icon = "weibo"
+  icon_pack = "fab"
+  link = "//weibo.com/aoxiaojian"
+
+[[social]]
+  icon = "youtube"
+  icon_pack = "fab"
+  link = "//www.youtube.com/channel/UCKeIYzzIeOtVR1iSfAdRBqQ"
+  
+  
 增加个人简介
 ```
 
-修改 contact.md:
+### hero.md
 
-```tom
-active = true	# 不想显示的话可以在这里关闭
-title = "和我联系"
-subtitle = ""
-```
+暂时 禁用，后面再来设置
 
-修改 hero.md:
-
-```tom
+```toml
 title = "SOFAMesh"
 overlay_img = "projects/sofamesh-wide.jpg" # 记得把图片放到static/img/下
 
@@ -244,71 +305,70 @@ overlay_img = "projects/sofamesh-wide.jpg" # 记得把图片放到static/img/下
 
 hero_carousel.md 是另一个版本的hero，横屏，可以多个话题滑动，效果更好的感觉。后面再整理。
 
-修改 posts.md:
+### posts.md
 
-```tom
+```toml
 title = "技术博客"
 count = 10
+
+view = 2
 ```
 
-修改 projects.md
+修改 content/posts/_index.md 文件：
 
-```to
-title = "开源项目"
-subtitle = ""
-
-# filter根据实际情况调整
-[[filter]]
-  name = "All"
-  tag = "*"
-
-[[filter]]
-  name = "Service Mesh"
-  tag = "servicemesh"
-
-[[filter]]
-  name = "Serverless"
-  tag = "serverless"
+```toml
+title = "技术博客"
+view = 3
 ```
 
-修改 publications.md
+### publications.md
 
-```to
-title = "最新动态"
-subtitle = "演讲/文章/分享"
+```toml
+title = "出版作品"
 count = 5
+weight = 30
+
+view = 3
+exclude_featured = true
 ```
 
-修改 publications_selected.md 
+修改 content/publications/_index.md 文件：
 
-```tom
+```toml
+title = "出版作品"
+view = 3
+```
+
+### publications_featured.md
+
+```toml
 title = "特别推荐"
 ```
 
-修改 search.md:
+### tags.md
 
-```tom
-title = "站内搜索"
+```toml
+title = "内容标签"
 ```
 
-修改 skills.md
+### projects.md
 
-```tom
-# 关闭，中国人还是习惯性谦虚一些好，详细列技能感觉怪怪
-active = false
+```toml
+title = "开源项目"
 ```
 
-修改 tags.md
+### contact.md
 
-```tom
-title = "标签"
+```toml
+title = "和我联系"
 ```
 
-修改 talks.md
+### talks.md
 
 ```tom
-title = "演讲计划"
-subtitle = "技术大会日程安排"
+title = "演讲分享"
+count = 5
+weight = 20
 ```
 
 修改talks_selected.md:
@@ -318,12 +378,6 @@ title = "下一站"
 subtitle = "近期活动，欢迎关注"
 ```
 
-修改teaching.md:
-
-```tom
-# 暂时关闭，没有需要
-active = false
-```
 
 ### 修改post
 
@@ -515,6 +569,3 @@ cloudflare网站是在国外，访问速度慢，而且非常不稳定：经常�
 1. 用chrome浏览器的开发工具，看network，就知道有哪些文件是走remote访问了
 2. `find -type f -exec grep -H "//cdn" {} \;` 这样的命令可以方便的查找存在问题的文件
 
-## 待解决的问题
-
-1. 站内搜索只能搜索英文，使用中文搜索会无法找到任何信息。
