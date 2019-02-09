@@ -17,45 +17,15 @@ description : "为了让Hugo网站更好的被搜索引擎收录，需要进行�
 
 ### 修改配置
 
-修改hugo根目录下的 `config.toml` 文件：
+修改 `hugo/config/_default` 目录下的 `params.toml` 文件：
 
 ```toml
-languageCode = "zh-cn" # 修改为中文，默认是"en-us"
-
-enableRobotsTXT = true
-
-# 设置网站信息
-[params]
-	author = "敖小剑"
-	subtitle = "记录hugo的基本使用和常用技巧，还有推荐的hugo主题。"
-	keywords = "hugo,学习笔记,敖小剑,主题"
-	description = "Hugo是由Go语言实现的静态网站生成器。这份hugo学习笔记，记录hugo的基本使用和常用技巧，还有推荐的hugo主题。"
+description = "敖小剑的个人技术博客网站，主要关注服务网格,serverless,kubernetes,微服务等云原生技术。"
 ```
 
 ### 修改模板
 
-修改模板中的`head.html`文件如 `themes/××××/layouts/partials/head.html`，加入
-
-```html
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="{{ delimit .Keywords ", " }}">
-```
-
-页面meta信息中的 title 都统一为 页面title + 网站title 的形式，由于两个参数肯定都会设置，就不做非空判断了：
-
-```html
-<title>{{ .Title }} - {{ .Site.Title }}</title>
-<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-<meta name="apple-mobile-web-app-title" content="{{ .Title }} - {{ .Site.Title }}">
-```
-
-页面meta信息中的 description 的逻辑为如果没有设置页面description就用网站的description：
-
-```html
-{{ $realDescription := or .Description .Site.Params.description}}
-<meta name="description" content="{{ $realDescription }}">
-<meta property="og:description" content="{{ $realDescription }}">
-```
+0.54 版本下基本做的很好了，不再修改。
 
 ### 添加页面信息
 

@@ -13,7 +13,7 @@ description : "详细介绍Hugo的安装"
 
 安装hugo之前，先安装好golang。
 
-目前新版本的hugo如0.48版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
+目前新版本的hugo如0.54版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
 
 ## Linux安装
 

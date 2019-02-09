@@ -472,6 +472,12 @@ http://localhost:1313/slides/example-slides/
 
 发现原来是一个用markdown书写slides的功能，很有意思，稍后研究。
 
+### 图标和其他文件设置
+
+复制 icon.png / icon-192.png 到 static/img 目录下。
+
+复制 baidu_verify_××××.html 和 google××××.html 到 static 目录下。
+
 ## 优化
 
 ### 关闭google地图
@@ -568,4 +574,113 @@ cloudflare网站是在国外，访问速度慢，而且非常不稳定：经常�
 
 1. 用chrome浏览器的开发工具，看network，就知道有哪些文件是走remote访问了
 2. `find -type f -exec grep -H "//cdn" {} \;` 这样的命令可以方便的查找存在问题的文件
+
+
+## 主题模板调整
+
+0.54 版本的 academic 主题，在 post、publication、talk 等几个列表显示时，都不再提供图片显示，效果和之前版本差别好大，因此考虑修改模板。
+
+`academic/layouts/partials/widgets`
+
+### talk
+
+修改 `themes/academic/layouts/partials/talk_li_card.html` 文件。
+
+下面的内容，只显示日期，不显示具体时间。然后显示publication信息
+
+```html
+  <div class="talk-metadata" itemprop="startDate">
+    {{ $date := .Params.time_start | default .Date }}
+    {{ (time $date).Format $.Site.Params.date_format }} @ {{ .Params.publication }}
+  </div>
+```
+
+原有的这段内容删除，非常难看：
+
+```html
+{{ (time $date).Format $.Site.Params.date_format }}
+    {{ if not .Params.all_day }}
+      {{ (time $date).Format ($.Site.Params.time_format | default "3:04 PM") }}
+      {{ with .Params.time_end }}
+        &mdash; {{ (time .).Format ($.Site.Params.time_format | default "3:04 PM") }}
+      {{ end }}
+    {{ end }}
+```
+
+删除一下内容，新版本的 featured image 的显示丑的没法忍：
+
+```html
+  {{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+  {{ $anchor := .Params.image.focal_point | default "Smart" }}
+  {{ with $resource }}
+  {{ $image := .Fill (printf "918x517 q90 %s" $anchor) }}
+  <div>
+    <a href="{{ $.RelPermalink }}">
+      <img src="{{ $image.RelPermalink }}" class="article-banner" itemprop="image" alt="">
+    </a>
+  </div>
+  {{end}}
+```
+
+将旧版本的横幅图片显示搬回来，在上面位置加入如下内容：
+
+```html
+  {{ if .Params.image_preview }}
+    {{ .Scratch.Set "image" .Params.image_preview }}
+  {{ else if .Params.header.image }}
+    {{ .Scratch.Set "image" .Params.header.image }}
+  {{ end }}
+  {{ if .Scratch.Get "image" }}
+  <div>
+    <a href="{{ .RelPermalink }}">
+      {{ $img_src := urls.Parse (.Scratch.Get "image") }}
+      {{ if $img_src.Scheme }}
+        <img src="{{ .Scratch.Get "image" }}" class="article-banner" itemprop="image">
+      {{ else }}
+        <img src="{{ "/img/" | relURL }}{{ .Scratch.Get "image" }}" class="article-banner" itemprop="image">
+      {{ end }}
+    </a>
+  </div>
+  {{ end }}
+```
+
+### publication
+
+修改 `themes/academic/layouts/partials/publication_li_card.html` 文件。
+
+同样去掉featured images的代码，也同样将原来的横幅图片显示搬回来。
+
+然后作者信息在最上面，有些不好看，将这行移动到下面一点的位置：
+
+```html
+{{ partial "page_metadata" (dict "content" $ "is_list" 1) }}
+```
+
+### post
+
+修改 `themes/academic/layouts/partials/post_li_card.html` 文件。
+
+同样去掉featured images的代码，也同样将原来的横幅图片显示搬回来。
+
+### project
+
+暂时还不清楚如何设置，后面再弄。
+
+### leanging
+
+学习笔记中，0.54 版本不再显示 header images了，改回来。
+
+需要修改 `themes/academic/layouts/partials/doc_layout.html` 文件 ，加入 
+
+`{{ partial "header_image.html" . }}` 这一行代码：
+
+```html
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        {{ partial "header_image.html" . }}
+
+        <div class="docs-article-container">
+```
+
+然后将老版本的 header_image.html 文件复制到 themes/academic/layouts/partials/ 目录下。
 
