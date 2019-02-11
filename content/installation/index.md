@@ -2,8 +2,6 @@
 date: 2018-09-10T21:07:13+08:00
 title: 安装
 weight: 200
-keywords:
-- Hugo安装
 description : "详细介绍Hugo的安装"
 ---
 
@@ -15,9 +13,13 @@ description : "详细介绍Hugo的安装"
 
 目前新版本的hugo如0.54版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
 
+## 安装
+
+在[Hugo Releases](https://github.com/spf13/hugo/releases)页面下载对应操作系统版本的安装包。
+
 ## Linux安装
 
-在[Hugo Releases](https://github.com/spf13/hugo/releases)页面下载对应操作系统版本的安装包，如：
+找到linux的安装包，对于 ubuntu 可以直接用 deb 文件：
 
 - hugo_0.54_Linux-64bit.deb
 
@@ -27,11 +29,29 @@ deb文件直接安装即可。
 sudo dpkg -i hugo_0.54_Linux-64bit.deb 
 ```
 
+### Mac安装
+
+mac 下安装最简单的方式是用brew命令
+
+```bash
+brew install hugo
+```
+
+也可以从下载页面下载到macos的安装包，解压后，将 hugo 可执行文件放在path路径下即可。
+
+### 安装后设置
+
 验证安装：
 
 ```bash
 $ hugo version
 Hugo Static Site Generator v0.54.0-B1A82C61 linux/amd64 BuildDate: 2019-02-01T09:40:34Z
+```
+
+为了方便使用，增加hugo server 命令的 alias： 
+
+```bash
+alias h="hugo server --disableFastRender"
 ```
 
 ## 自动发布
