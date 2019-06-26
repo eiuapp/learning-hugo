@@ -54,6 +54,12 @@ example之skyao:
     - https://github.com/skyao/learning-istio
     - [主题修改](https://github.com/skyao/hugo-material-docs)
 
+注意:
+
+    - _index.md 这样的文件,显示,一级菜单的内容,其实关联不大, 且,可删除 
+    - index.md 这样的文件,与一级菜单的内容相关, 不会单独显示在子页面上 
+
+
 - docDock
 
     这个是基于 learn 主题二次开发的
@@ -83,6 +89,11 @@ example之skyao:
 	类似gitbook。
 
 	https://themes.gohugo.io/hugo-theme-learn/
+    
+    注意:
+    
+    - _index.en.md 这样的文件,显示,一级菜单的内容 
+    - index.md 这样的文件,与一级菜单的内容无关, 会单独显示在子页面上 
 
 - Alabaster
 
