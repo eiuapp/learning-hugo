@@ -57,7 +57,7 @@ https://themes.gohugo.io/tags/documentation/
 
 	单页文档，适合Q&A之类。
 
-	https://themes.gohugo.io/bootie-docs/
+    https://themes.gohugo.io/hugo-simpledoc-theme/
 
 - learn
 
