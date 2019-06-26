@@ -43,4 +43,4 @@ deploy:
 #  email: 273412935@qq.com
 #  name: "eiuapp"
   on:
-    branch: master # 博客源码的分支
+    branch: eiuapp # 博客源码的分支
