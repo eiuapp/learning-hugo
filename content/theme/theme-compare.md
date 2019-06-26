@@ -92,9 +92,10 @@ example之skyao:
     
     注意:
     
-    - _index.en.md 这样的文件,显示,一级菜单的内容 
+    - _index.en.md 这样的文件,显示,一级菜单的内容. 
+    - _index.en.md 文件可以没有，此时，显示文件夹名
     - index.md 这样的文件,与一级菜单的内容无关, 会单独显示在子页面上 
-
+    
 - Alabaster
 
 	类似gitbook，稍显呆板。
