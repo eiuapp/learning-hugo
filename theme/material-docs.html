@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <title>material-docs主题 - Hugo学习笔记</title>
+    <meta name="generator" content="Hugo 0.51" />
+
+    
+    <meta name="description" content="介绍hugo的material-docs主题，使用方式和订制化">
+
+    <meta name="keywords" content="theme, material-docs, material-docs主题, hugo-material-docs">
+    <link rel="canonical" href="http://eiuapp.github.io/learning-hugo/theme/material-docs.html">
+    
+    <meta name="author" content="敖小剑">
+    
+
+    <meta property="og:url" content="http://eiuapp.github.io/learning-hugo/theme/material-docs.html">
+    <meta property="og:title" content="material-docs主题 - Hugo学习笔记">
+    <meta property="og:description" content="介绍hugo的material-docs主题，使用方式和订制化">
+    <meta property="og:image" content="http://eiuapp.github.io/learning-hugo/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="material-docs主题 - Hugo学习笔记">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot');
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.woff')
+               format('woff'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.ttf')
+               format('truetype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/application.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/local/fonts.googleapis.com/css.css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/modernizr.js"></script>
+
+    
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="alternate" type="application/rss+xml" title="Hugo学习笔记" />
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="feed" type="application/rss+xml" title="Hugo学习笔记" />
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        material-docs主题
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/skyao" title="@skyao on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/skyao/learning-hugo" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="http://eiuapp.github.io/learning-hugo/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Hugo学习笔记 </strong>
+        
+          <br>
+          skyao/learning-hugo
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-stars">
+            <a href="https://github.com/skyao/learning-hugo/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+          <li class="repo-download">
+            <a href="https://github.com/skyao/learning-hugo/issues" target="_blank" title="Issues" data-action="download">
+              <i class="icon icon-download"></i> 意见反馈
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+
+
+<li>
+  
+    
+
+
+<a  title="前言" href="http://eiuapp.github.io/learning-hugo/">
+	
+	前言
+</a>
+
+
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="介绍" href="http://eiuapp.github.io/learning-hugo/introduction/">
+	
+	介绍
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="资料" href="http://eiuapp.github.io/learning-hugo/introduction/information.html">
+	
+	资料
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="安装" href="http://eiuapp.github.io/learning-hugo/installation/">
+	
+	安装
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="快速开始" href="http://eiuapp.github.io/learning-hugo/installation/quickstart.html">
+	
+	快速开始
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="开启HTTPS" href="http://eiuapp.github.io/learning-hugo/installation/https.html">
+	
+	开启HTTPS
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="搜索引擎优化" href="http://eiuapp.github.io/learning-hugo/installation/seo.html">
+	
+	搜索引擎优化
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="主题" href="http://eiuapp.github.io/learning-hugo/theme/">
+	
+	主题
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="academic主题" href="http://eiuapp.github.io/learning-hugo/theme/academic.html">
+	
+	academic主题
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a class="current" title="material-docs主题" href="http://eiuapp.github.io/learning-hugo/theme/material-docs.html">
+	
+	material-docs主题
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题列表" href="http://eiuapp.github.io/learning-hugo/theme/theme.html">
+	
+	主题列表
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题比较" href="http://eiuapp.github.io/learning-hugo/theme/theme-compare.html">
+	
+	主题比较
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>material-docs主题 </h1>
+
+			
+
+<h2 id="主题介绍">主题介绍</h2>
+
+<p>material-docs官网：</p>
+
+<p><a href="http://themes.gohugo.io/theme/material-docs/">http://themes.gohugo.io/theme/material-docs/</a></p>
+
+<p>这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。</p>
+
+<p>我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hugo学习笔记用的就是此主题。</p>
+
+<h2 id="准备工作">准备工作</h2>
+
+<h3 id="fork并定制">Fork并定制</h3>
+
+<p>material-docs的github仓库已经有很长时间没有更新，基本停留在两年前。从实践中看，有很多问题，对新的hugo版本的支持也很不好。</p>
+
+<p>因此，采用fork的方式，建立自己的仓库：</p>
+
+<p><a href="https://github.com/skyao/hugo-material-docs">https://github.com/skyao/hugo-material-docs</a></p>
+
+<p>期间做了很多了更新：</p>
+
+<ol>
+<li>PR那边有很多已经被发现而且修订提交的问题，但是一直没有merge，我手工合并到自己的仓库</li>
+<li>弃用google统计，改用百度统计，具体做法和 <a href="../academic/analytices/">academic</a> 中的做法是一样的</li>
+<li>同样进行了本地加速，参照  <a href="../academic/local-speed-up/">academic</a> 中的做法</li>
+<li>修改了layout文件，主要是删除了版权申明，作者信息，下载修改为意见反馈，现在的版面非常的干净，没有任何多余的东西</li>
+<li>汉化，没有做标准的i18n，因为是给自己定制，因此直接在layout文件中修改为中文。</li>
+<li>修改了exampleSite的内容，删除原有的页面和图片，改为学习笔记的常见页面如介绍，安装等，方便后续使用</li>
+<li>提供了简单的gitbook模版文件支持，可以生成一个简单带有文字说明和链接的页面，以便将原有gitbook用户导流到新的hugo笔记</li>
+</ol>
+
+<h2 id="使用方式">使用方式</h2>
+
+<p>以新建一个学习笔记为例，详细描述需要的步骤和命令。</p>
+
+<h3 id="新建学习笔记">新建学习笔记</h3>
+
+<ol>
+<li><p>在github中新建仓库，名为 <strong>learning-cilium</strong>的Cilium学习笔记</p></li>
+
+<li><p>在本地新建一个hugo站点</p>
+
+<pre><code class="language-bash">hugo new site learning-cilium
+cd learning-cilium
+</code></pre></li>
+
+<li><p>下载更新主题的脚本并执行</p>
+
+<pre><code class="language-bash">wget https://raw.githubusercontent.com/skyao/hugo-material-docs/master/exampleSite/update_theme.sh
+chmod +x update_theme.sh
+./update_theme.sh
+</code></pre>
+
+<p>命令完成之后，<code>themes/hugo-material-docs</code>目录下就有我们自己的主题文件内容。</p></li>
+
+<li><p>从<code>exampleSite</code>目录复制需要的站点初始化文件到新站点</p>
+
+<pre><code class="language-bash">cd themes/hugo-material-docs
+# 复制config.toml文件
+cp config.toml ../../../config.toml
+# 复制content目录和static目录
+cp -r content/ ../../../content/
+cp -r static/ ../../../static/
+# 复制gitignore文件
+cp gitignore-example ../../../.gitignore
+</code></pre></li>
+
+<li><p>修改新站点的<code>config.toml</code>文件</p>
+
+<p>以下内容必须修改：</p>
+
+<pre><code class="language-toml">title = &quot;学习笔记&quot;
+repo_url = &quot;https://github.com/skyao/learning-hugo&quot;
+</code></pre></li>
+
+<li><p>此时已经开始运行<code>hogo server</code>命令来查看新站点的内容了</p></li>
+
+<li><p>继续修改站点内容</p>
+
+<p>主要是content目录下的<code>index.md</code>以及<code>installation</code>和<code>introduction</code>两个目录下的文件，也可以继续修改config.toml文件，可以从浏览器上实时看到修改后的效果</p></li>
+
+<li><p>复制<code>content/index.md</code>文件到根目录下，作为README.md文件</p>
+
+<pre><code class="language-bash">cp content/index.md README.md
+</code></pre>
+
+<p>然后删除文件头部的hugo元数据。</p></li>
+
+<li><p>提交第一个初始版本到github</p>
+
+<pre><code class="language-bash">git init
+# 检查一下要提交的文件是否如预期
+git status
+git add -A
+git commit -m &quot;first version&quot;
+git remote add origin git@github.com:skyao/learning-cilium.git
+git push -u origin master
+</code></pre></li>
+
+<li><p>和gitbook共存</p>
+
+<p>由于原来的读书笔记是gitbook格式，因此为了让原来gitbook那边的老用户有机会找回到新的基于hugo的笔记，需要在gitbook那边好歹留一个简单页面说明。</p>
+
+<p>为此，保留gitbook的最少文件，如<code>book.json</code>和<code>README.md</code>即可。是的，SUMMARY.md文件都是可以不用的，而且README.md文件本来也可以用来作为在github仓库的首页文档，因此实质上只是多了一个<code>book.json</code>文件。</p>
+
+<p>内容示意如下：</p>
+
+<pre><code class="language-json">{
+  &quot;gitbook&quot;: &quot;&gt;=3.2.0&quot;,
+  &quot;description&quot;: &quot;Hugo学习笔记&quot;,
+  &quot;language&quot;: &quot;zh-hans&quot;,
+  &quot;author&quot;: &quot;敖小剑&quot;,
+  &quot;extension&quot;: null,
+  &quot;generator&quot;: &quot;site&quot;,
+  &quot;links&quot; : {
+    &quot;sidebar&quot; : {
+        &quot;敖小剑的博客&quot;: &quot;https://skyao.io&quot;
+    }
+  },
+  &quot;structure&quot; : {
+    },
+  &quot;plugins&quot;: [
+    &quot;-search&quot;,
+    &quot;-sharing&quot;
+  ],
+  &quot;pluginsConfig&quot;: {
+  },
+  &quot;title&quot;: &quot;Hugo学习笔记&quot;,
+  &quot;variables&quot;: {
+  }
+}
+</code></pre></li>
+
+<li><p>最后，准备好<code>.gitignore</code>文件</p>
+
+<pre><code class="language-bash">.*
+!.gitignore
+_book/
+node_modules/
+public/
+themes/
+update_theme.sh
+</code></pre></li>
+</ol>
+
+<h2 id="扩展和增强">扩展和增强</h2>
+
+<h3 id="三次菜单和自动隐藏">三次菜单和自动隐藏</h3>
+
+<p>默认，material-docs主题的主菜单，只显示两层。修改代码之后可以支持三层菜单显示，以应对笔记内容比较多的情况。</p>
+
+<p>但是也引发了另外一个问题，内容比较多的笔记，三级菜单一起展开，主菜单项的内容实在太多了。而且material-docs主题的主菜单是每个页面都嵌入的，不是iframe那种，导致菜单项比很多页面的实际内容都要多。因此考虑实现菜单项的自动隐藏，当菜单项（或者子项）没有被打开时，就只打开一级菜单。</p>
+
+<p>需要修改<code>hugo-material-docs/layouts/partials/nav.html</code>文件：</p>
+
+<pre><code class="language-html">{{ $currentNode := . }}
+
+{{ range .Site.Menus.main.ByWeight }}
+{{ $.Scratch.Set &quot;currentMenuEntry&quot; . }}
+&lt;li&gt;
+  {{ if .HasChildren }}
+    {{ partial &quot;nav_link&quot; $currentNode }}
+{{ if hasPrefix ( $.Permalink | relURL | printf &quot;%s&quot; )  .URL }}
+    &lt;ul&gt;
+      {{ range .Children }}
+        {{ $.Scratch.Set &quot;currentMenuEntry&quot; . }}
+        &lt;li&gt;
+          {{ if .HasChildren }}
+            {{ partial &quot;nav_link&quot; $currentNode }}
+{{ if hasPrefix ( $.Permalink | relURL | printf &quot;%s&quot; )  .URL }}
+            &lt;ul&gt;
+              {{ range .Children }}
+                {{ $.Scratch.Set &quot;currentMenuEntry&quot; . }}
+                {{ partial &quot;nav_link&quot; $currentNode }}
+              {{ end }}
+            &lt;/ul&gt;
+{{ end }}
+          {{ else }}
+            {{ partial &quot;nav_link&quot; $currentNode }}
+          {{ end }}
+        &lt;/li&gt;
+      {{ end }}
+    &lt;/ul&gt;
+{{ end }}
+  {{ else }}
+    {{ partial &quot;nav_link&quot; $currentNode }}
+  {{ end }}
+&lt;/li&gt;
+{{ end }}
+</code></pre>
+
+<p>因为不熟悉代码，暂时通过写笨代码的方式实现了第三级菜单，最好是能用递归的方式，这样就可以实现无限级的菜单了。<code>{{ if hasPrefix ( $.Permalink | relURL | printf &quot;%s&quot; )  .URL }}</code> 用来判断是当前菜单或者当前菜单的子项是否打开，这个判断在第二级和第三级菜单中执行。</p>
+
+<h2 id="发现并修复的问题">发现并修复的问题</h2>
+
+<h3 id="主菜单上当前页的h2菜单不显示">主菜单上当前页的H2菜单不显示</h3>
+
+<p>这个主题有个特性，可以在主菜单中，在当前页面下会自动增加所有H2 titile作为子菜单。这个特性相当于自动增加了一级菜单，对于内容长的页面很有用。</p>
+
+<p>发现，如果baseURL是完全域名如&rdquo;<a href="https://skyao.io/&quot;或者&quot;http://localhost:1313&quot;时，工作正常。但是，如果baseURL是&quot;https://skyao.io/learning-hugo/&quot;或者&quot;http://localhost:1313/learning-hugo/&quot;这样带有子目录时，就会失效。">https://skyao.io/&quot;或者&quot;http://localhost:1313&quot;时，工作正常。但是，如果baseURL是&quot;https://skyao.io/learning-hugo/&quot;或者&quot;http://localhost:1313/learning-hugo/&quot;这样带有子目录时，就会失效。</a></p>
+
+<p>检查发现，是<code>themes/hugo-material-docs/layouts/partials</code>下的<code>nav_link.html</code>中，这段代码判断错误：</p>
+
+<pre><code class="language-html">{{ $currentMenuEntry := .Scratch.Get &quot;currentMenuEntry&quot; }}
+{{ $isCurrent := eq .Permalink ($currentMenuEntry.URL | absURL | printf &quot;%s&quot;) }}
+</code></pre>
+
+<p>这里判断菜单项是否是当前页面时，判断的方式是将当前页面的实际URL Permalink(内容如<code>https://skyao.io/learning-hugo/installation/seo/</code>) 和菜单项URL地址<code>$currentMenuEntry.URL</code>(内容如<code>/installation/seo/</code>)进行比较，如果一致则表示是当前页面。为了得到菜单项URL地址的绝对路径，需要使用absURL函数，如<code>($currentMenuEntry.URL | absURL | printf &quot;%s&quot;)</code>。</p>
+
+<p>但是这里的absURL函数输出结果居然是不正确的！baseURL为<code>https://skyao.io/learning-hugo/</code> ，参数为 <code>/installation/seo/</code>时，函数absURL的结果居然是<code>https://skyao.io/installation/seo/</code>，<code>learning-hugo/</code>子目录消失了。</p>
+
+<p>修改方式为通过获取Permalink地址的相对路径，然后和<code>$currentMenuEntry.URL</code>比较，这样就避开了absURL函数的问题：</p>
+
+<pre><code class="language-html">{{ $currentMenuEntry := .Scratch.Get &quot;currentMenuEntry&quot; }}
+{{ $isCurrent := eq ( .Permalink | relURL | printf &quot;%s&quot; ) $currentMenuEntry.URL }}
+</code></pre>
+
+<p>这里还发现一个要注意的地方，在config.toml文件中，主菜单项的配置，url一定要用&rdquo;/&ldquo;开头，即：</p>
+
+<pre><code class="language-toml">[[menu.main]]
+	name   = &quot;安装&quot;
+	identifier = &quot;installation&quot;
+	url    = &quot;/installation/&quot;		# 这里一定不要设置为&quot;installation/&quot;
+	weight = 200
+</code></pre>
+
+<p>测试验证OK！</p>
+
+<h3 id="index页面变成空白页">Index页面变成空白页</h3>
+
+<p>这个问题来历有些特别，material-docs主题因为太长时间没有维护，所以和新版本的hugo有非常大的差异。</p>
+
+<p>体现在<code>_index.md</code>文件的使用上，material-docs主题的exampleSite，跑在新版本的hugo上，各个页面都直接报错&rdquo;404&rdquo;！看public目录发现，content目录下的除index.md文件外，其他内容包括子目录都没有被处理。</p>
+
+<p>解决的方式就是在每个目录（包括根目录）下放置一个<code>_index.md</code>文件。</p>
+
+<p>但是，首页会偶尔出现问题，<code>/</code>这个页面偶尔会出现空白，没有内容，有时有能正常显示<code>index.md</code>文件的内容。没有规律，有时发生。</p>
+
+<p>最后，解决的方式是：</p>
+
+<ol>
+<li><p>修改主题布局文件 <code>hugo-material-docs/layouts/index.html</code></p>
+
+<pre><code class="language-html">{{ range where .Site.Pages &quot;Type&quot; &quot;index&quot; }}
+&lt;h1&gt;{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}&lt;/h1&gt;
+
+{{ .Content }}
+{{ end }}
+</code></pre>
+
+<p>删除这里的range循环，不要这个功能（可以自动从其他type为index的页面提取Content然后聚合在最后生成的index.html文件里面，不好用）：</p>
+
+<pre><code class="language-html">&lt;h1&gt;{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}&lt;/h1&gt;
+
+{{ .Content }}
+</code></pre>
+
+<p>​</p></li>
+
+<li><p>在根目录下只放置一个<code>_index.md</code>文件，原来<code>index.md</code>的内容都放在这个文件里面。或者说，将<code>index.md</code>文件改名为&rdquo;_index.md&rdquo;。其他目录下还是同时放<code>index.md</code>和<code>_index.md</code>文件。</p></li>
+</ol>
+
+<h3 id="上一页和下一页的准确性">上一页和下一页的准确性</h3>
+
+<p>页面排序有两个位置：</p>
+
+<ol>
+<li><p>左边的主菜单栏：这个是通过<code>config.toml</code>文件中定义的main menu的weight来决定，配合每个页面的weight。</p>
+
+<p>注意这时单个目录下的子页面的排序是在当前目录下进行。</p></li>
+
+<li><p>每个页面的底部有上一页和下一页</p>
+
+<p>默认是按照时间（即每个页面上的data信息）排序，所以和前面用weight排序的结果就会很有大出入。</p>
+
+<p>因此，需要修改模板文件将排序方式修改为按照weight排序。</p>
+
+<p>其次，这里的排序是全局（即所有页面）进行排序。和前面每个目录下单独排序不一样，因此要让页面的上一页和下一页显示的内容和主菜单一致，就必须保证两个方法排序的一致性。</p>
+
+<p>推荐的方式是：子目录之间分配好weight的范围，比如a目录是100-199，b目录是200-299。然后a目录下的页面的weight就一定要取值在100-199中，b目录下的页面的weight就一定要取值在200-299。</p></li>
+</ol>
+
+<h2 id="待解决的问题">待解决的问题</h2>
+
+<h3 id="主题已经不再更新">主题已经不再更新</h3>
+
+<p>作者已经消失，一年多没有更新，包括PR也没有人合并。</p>
+
+<p>随着hugo的版本越来越新，这个主题的问题也越来越多。希望后面有人继续维护这个主题，或者有类似的替代gitbook适合编写学习笔记类的主题出现。</p>
+
+
+
+
+			<footer class="footer">
+				
+
+
+
+
+
+
+    
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+      <a href="http://eiuapp.github.io/learning-hugo/theme/academic.html" title="academic主题">
+        <span class="direction">
+          上一页
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              academic主题
+            </div>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+  
+  
+      <a href="http://eiuapp.github.io/learning-hugo/theme/theme.html" title="主题列表">
+        <span class="direction">
+          下一页
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              主题列表
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'http:\/\/eiuapp.github.io\/learning-hugo\/';
+      var repo_id  = 'skyao\/learning-hugo';
+    
+    </script>
+
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+ 	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?c7442f5794ea2abb71c6ff05dc0b8779";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+    
+
+    <script src="http://eiuapp.github.io/learning-hugo/local/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <title>介绍 - Hugo学习笔记</title>
+    <meta name="generator" content="Hugo 0.51" />
+
+    
+    <meta name="description" content="介绍Hugo，以及为什么要使用hugo">
+
+    <meta name="keywords" content="hugo, Hugo是什么, 为什么用Hugo">
+    <link rel="canonical" href="http://eiuapp.github.io/learning-hugo/introduction/">
+    
+    <meta name="author" content="敖小剑">
+    
+
+    <meta property="og:url" content="http://eiuapp.github.io/learning-hugo/introduction/">
+    <meta property="og:title" content="介绍 - Hugo学习笔记">
+    <meta property="og:description" content="介绍Hugo，以及为什么要使用hugo">
+    <meta property="og:image" content="http://eiuapp.github.io/learning-hugo/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="介绍 - Hugo学习笔记">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot');
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.woff')
+               format('woff'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.ttf')
+               format('truetype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/application.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/local/fonts.googleapis.com/css.css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/modernizr.js"></script>
+
+    
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="alternate" type="application/rss+xml" title="Hugo学习笔记" />
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="feed" type="application/rss+xml" title="Hugo学习笔记" />
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        介绍
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/skyao" title="@skyao on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/skyao/learning-hugo" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="http://eiuapp.github.io/learning-hugo/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Hugo学习笔记 </strong>
+        
+          <br>
+          skyao/learning-hugo
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-stars">
+            <a href="https://github.com/skyao/learning-hugo/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+          <li class="repo-download">
+            <a href="https://github.com/skyao/learning-hugo/issues" target="_blank" title="Issues" data-action="download">
+              <i class="icon icon-download"></i> 意见反馈
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+
+
+<li>
+  
+    
+
+
+<a  title="前言" href="http://eiuapp.github.io/learning-hugo/">
+	
+	前言
+</a>
+
+
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a class="current" title="介绍" href="http://eiuapp.github.io/learning-hugo/introduction/">
+	
+	介绍
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="资料" href="http://eiuapp.github.io/learning-hugo/introduction/information.html">
+	
+	资料
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="安装" href="http://eiuapp.github.io/learning-hugo/installation/">
+	
+	安装
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="快速开始" href="http://eiuapp.github.io/learning-hugo/installation/quickstart.html">
+	
+	快速开始
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="开启HTTPS" href="http://eiuapp.github.io/learning-hugo/installation/https.html">
+	
+	开启HTTPS
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="搜索引擎优化" href="http://eiuapp.github.io/learning-hugo/installation/seo.html">
+	
+	搜索引擎优化
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="主题" href="http://eiuapp.github.io/learning-hugo/theme/">
+	
+	主题
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="academic主题" href="http://eiuapp.github.io/learning-hugo/theme/academic.html">
+	
+	academic主题
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="material-docs主题" href="http://eiuapp.github.io/learning-hugo/theme/material-docs.html">
+	
+	material-docs主题
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题列表" href="http://eiuapp.github.io/learning-hugo/theme/theme.html">
+	
+	主题列表
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题比较" href="http://eiuapp.github.io/learning-hugo/theme/theme-compare.html">
+	
+	主题比较
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>介绍 </h1>
+
+			
+
+<p><img src="images/hugo-logo.png" alt="" /></p>
+
+<h2 id="hugo是什么">Hugo是什么？</h2>
+
+<p>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。</p>
+
+<h2 id="为什么用hugo">为什么用Hugo？</h2>
+
+<p>Hugo以速度快著称，号称是世界上最快的网站生成框架。</p>
+
+<p><strong>The world’s fastest framework for building websites</strong></p>
+
+<p><img src="images/hugo-icon-big.png" alt="" /></p>
+
+<h3 id="1password">1Password</h3>
+
+<p>这里有一段来自1Password的对hugo的评价，很有代表性。</p>
+
+<blockquote>
+<p>内容翻译自  <a href="https://gohugo.io/showcase/1password-support/">https://gohugo.io/showcase/1password-support/</a></p>
+</blockquote>
+
+<p>在1Password，我们过去每个月都会经历一个不同的文档平台：博客引擎，电子书，维基，用Ruby和JavaScript编写的网站生成器。 每个方式都有自己的不足。然后我们找到了hugo。我们做了最后一次切换，我们很高兴我们做到了。</p>
+
+<p><strong>并非所有静态站点生成器都是相同的</strong></p>
+
+<p>找到一个能让您的客户，作者，设计师和DevOps团队满意的工具并非易事，但我们通过Hugo进行了管理：</p>
+
+<ul>
+<li><p><strong>Hugo是静态的</strong>。我们是一家安全公司，所以我们坚持静态网站并尽可能地使用它们。我们觉得客户在HTML文件上比在需要强化的复杂服务器上更安全。</p></li>
+
+<li><p><strong>Hugo是基于Go的</strong>。在1Password我们喜欢Go编程语言，我们很高兴得知Hugo使用了我们的设计师和前端开发人员已经掌握的相同的Go模板语法。</p></li>
+
+<li><p><strong>Hugo很快</strong>。我们以前的静态站点生成器花费将近一分钟来编译我们的（那时还小得多）站点。开发人员可能已经习惯了这一点，但对于希望看到工作实时预览的作家来说，这并不合适。Hugo在几毫秒内完成了同样的工作，到现在，转瞬之间就可以编译五种语言编写的400多个页面。</p></li>
+
+<li><p><strong>Hugo很灵活</strong>。感谢Hugo的内容和布局系统，我们能够保留现有的文件和文件夹结构，并在几天内移植整个生产站点。然后我们可以创建以前不可能的新内容类型，比如这些时髦的陈列柜。</p></li>
+
+<li><p><strong>Hugo非常适合作家</strong>。我们的文档团队已经对Markdown和Git感到满意，并且可以开始为Hugo创建内容而无需停顿。一旦我们添加了短代码，我们的作者就可以通过少量的新语法来使用类似平台盒(platform boxes)的功能来装饰文章。</p></li>
+
+<li><p><strong>Hugo有一个惊人的开发者社区</strong>。Hugo更新频繁，充满了功能和修复。在我们开发网站的多语言版本时，我们提交了所需功能的PR，并通过@bep和其他人的流程得到了帮助。</p></li>
+
+<li><p><strong>Hugo易于部署</strong>。 Hugo拥有适量的配置选项，可以适应我们的构建系统而不会太复杂。</p></li>
+</ul>
+
+<h3 id="我的个人感受">我的个人感受</h3>
+
+<p>我的个人博客网站，十几年来经历过很多变更，从csdn，blogjava，javaeye，hexo+github page，gitbook一路走来，在2018年2月，开始转换到hugo，迄今半年多。</p>
+
+<p>这些年博客的历程，有兴趣了解的同学可以看看我当时写的文章：<a href="https://skyao.io/post/201802-getting-started/">十年一觉扬州梦，赢得青楼薄幸名</a></p>
+
+<p><img src="images/hugo-logo-black.png" alt="" /></p>
+
+<p>目前的博客网站使用了自行修改订制之后的 academic 主题，非常满意，点击 <a href="https://skyao.io">这里</a> 可以看到实际效果。而现在这份Hugo学习笔记和另一份<a href="https://skyao.io/learning-cilium">cilium学习笔记</a>，则采用的是Hugo+material-docs主题，后续会将目前大大小小的四五十份学习笔记逐步迁移到hugo上来。</p>
+
+<p>对于hugo，个人非常喜爱，上面1Password列出的几点都感同身受。仅从个人感受上说，我觉得hugo优势主要体现在以下方面：</p>
+
+<ol>
+<li>静态文件生成：生成纯静态文件，可以任意找地方托管，无任何特殊依赖。免费的github pages，廉价的虚拟主机，廉价的VPS，都可以轻松完成网站托管。</li>
+<li>markdown编写：这是至关重要的一点，在习惯了markdown高效而专注的写作体验之后，markdown的支持成为硬性要求。</li>
+<li>使用方便：无论是偏公共性质的技术博客，还是偏私人性质的学习笔记，从内容创作或者学习心得记录的角度，都是“内容为王”！因此，一个样式简单大方的网站，在一次性的安装调试完成之后，后续就应该可以轻松快捷的进行内容创作。</li>
+<li>速度！：仅以上述三点而言，hexo和gitbook都表现的很好，两者的功能和主题都非常的丰富。但是，hugo在渲染速度上明显高出太多，尤其是对比gitbook，几乎有几十上百倍的性能差距。当站点内容比较多，比如积攒了几年的博客，或者大量细节展开的学习笔记，gitbook的渲染速度就开始从秒级到十几秒再到分钟级，而变得越来越不可接受。Hugo的速度，是我最终放弃hexo和gitbook的最关键的原因。</li>
+<li>Go语言：这是讨人喜欢的一点，当然这会因人而异，nodejs的同学可能更愿意用gitbook。仅从个人感受上说，我对基于go的hugo好感更多。</li>
+<li>喜欢的主题：对于hexo、gitbook、hugo，都拥有数以千计的各式主题。而要在众多主题中找到自己的心头好，有时需要一点运气。我自我感觉比较幸运的是：我找到了两个很喜欢的主题，academic 和 material-docs，分别用于我的技术博客网站和学习笔记。特点是简单大气，简洁大方，不花俏，不土气，精致而内敛。有喜欢的主题，是一个关键的决策依据。</li>
+</ol>
+
+
+
+
+			<footer class="footer">
+				
+
+
+
+
+
+
+    
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+      <a href="http://eiuapp.github.io/learning-hugo/" title="前言">
+        <span class="direction">
+          上一页
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              前言
+            </div>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+  
+  
+      <a href="http://eiuapp.github.io/learning-hugo/introduction/information.html" title="资料">
+        <span class="direction">
+          下一页
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              资料
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'http:\/\/eiuapp.github.io\/learning-hugo\/';
+      var repo_id  = 'skyao\/learning-hugo';
+    
+    </script>
+
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+ 	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?c7442f5794ea2abb71c6ff05dc0b8779";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+    
+
+    <script src="http://eiuapp.github.io/learning-hugo/local/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

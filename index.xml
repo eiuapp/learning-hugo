@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前言 on Hugo学习笔记</title>
+    <link>http://eiuapp.github.io/learning-hugo/</link>
+    <description>Recent content in 前言 on Hugo学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Sep 2018 21:07:13 +0100</lastBuildDate>
+    
+	<atom:link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>介绍</title>
+      <link>http://eiuapp.github.io/learning-hugo/introduction/</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/introduction/</guid>
+      <description> Hugo是什么？ Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+为什么用Hugo？ Hugo以速度快著称，号称是世界上最快的网站生成框架。
+The world’s fastest framework for building websites
+1Password 这里有一段来自1Password的对hugo的评价，很有代表性。
+ 内容翻译自 https://gohugo.io/showcase/1password-support/
+ 在1Password，我们过去每个月都会经历一个不同的文档平台：博客引擎，电子书，维基，用Ruby和JavaScript编写的网站生成器。 每个方式都有自己的不足。然后我们找到了hugo。我们做了最后一次切换，我们很高兴我们做到了。
+并非所有静态站点生成器都是相同的
+找到一个能让您的客户，作者，设计师和DevOps团队满意的工具并非易事，但我们通过Hugo进行了管理：
+ Hugo是静态的。我们是一家安全公司，所以我们坚持静态网站并尽可能地使用它们。我们觉得客户在HTML文件上比在需要强化的复杂服务器上更安全。
+ Hugo是基于Go的。在1Password我们喜欢Go编程语言，我们很高兴得知Hugo使用了我们的设计师和前端开发人员已经掌握的相同的Go模板语法。
+ Hugo很快。我们以前的静态站点生成器花费将近一分钟来编译我们的（那时还小得多）站点。开发人员可能已经习惯了这一点，但对于希望看到工作实时预览的作家来说，这并不合适。Hugo在几毫秒内完成了同样的工作，到现在，转瞬之间就可以编译五种语言编写的400多个页面。
+ Hugo很灵活。感谢Hugo的内容和布局系统，我们能够保留现有的文件和文件夹结构，并在几天内移植整个生产站点。然后我们可以创建以前不可能的新内容类型，比如这些时髦的陈列柜。
+ Hugo非常适合作家。我们的文档团队已经对Markdown和Git感到满意，并且可以开始为Hugo创建内容而无需停顿。一旦我们添加了短代码，我们的作者就可以通过少量的新语法来使用类似平台盒(platform boxes)的功能来装饰文章。
+ Hugo有一个惊人的开发者社区。Hugo更新频繁，充满了功能和修复。在我们开发网站的多语言版本时，我们提交了所需功能的PR，并通过@bep和其他人的流程得到了帮助。
+ Hugo易于部署。 Hugo拥有适量的配置选项，可以适应我们的构建系统而不会太复杂。
+  我的个人感受 我的个人博客网站，十几年来经历过很多变更，从csdn，blogjava，javaeye，hexo+github page，gitbook一路走来，在2018年2月，开始转换到hugo，迄今半年多。
+这些年博客的历程，有兴趣了解的同学可以看看我当时写的文章：十年一觉扬州梦，赢得青楼薄幸名
+目前的博客网站使用了自行修改订制之后的 academic 主题，非常满意，点击 这里 可以看到实际效果。而现在这份Hugo学习笔记和另一份cilium学习笔记，则采用的是Hugo+material-docs主题，后续会将目前大大小小的四五十份学习笔记逐步迁移到hugo上来。
+对于hugo，个人非常喜爱，上面1Password列出的几点都感同身受。仅从个人感受上说，我觉得hugo优势主要体现在以下方面：
+ 静态文件生成：生成纯静态文件，可以任意找地方托管，无任何特殊依赖。免费的github pages，廉价的虚拟主机，廉价的VPS，都可以轻松完成网站托管。 markdown编写：这是至关重要的一点，在习惯了markdown高效而专注的写作体验之后，markdown的支持成为硬性要求。 使用方便：无论是偏公共性质的技术博客，还是偏私人性质的学习笔记，从内容创作或者学习心得记录的角度，都是“内容为王”！因此，一个样式简单大方的网站，在一次性的安装调试完成之后，后续就应该可以轻松快捷的进行内容创作。 速度！：仅以上述三点而言，hexo和gitbook都表现的很好，两者的功能和主题都非常的丰富。但是，hugo在渲染速度上明显高出太多，尤其是对比gitbook，几乎有几十上百倍的性能差距。当站点内容比较多，比如积攒了几年的博客，或者大量细节展开的学习笔记，gitbook的渲染速度就开始从秒级到十几秒再到分钟级，而变得越来越不可接受。Hugo的速度，是我最终放弃hexo和gitbook的最关键的原因。 Go语言：这是讨人喜欢的一点，当然这会因人而异，nodejs的同学可能更愿意用gitbook。仅从个人感受上说，我对基于go的hugo好感更多。 喜欢的主题：对于hexo、gitbook、hugo，都拥有数以千计的各式主题。而要在众多主题中找到自己的心头好，有时需要一点运气。我自我感觉比较幸运的是：我找到了两个很喜欢的主题，academic 和 material-docs，分别用于我的技术博客网站和学习笔记。特点是简单大气，简洁大方，不花俏，不土气，精致而内敛。有喜欢的主题，是一个关键的决策依据。  </description>
+    </item>
+    
+    <item>
+      <title>资料</title>
+      <link>http://eiuapp.github.io/learning-hugo/introduction/information.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/introduction/information.html</guid>
+      <description> 官方资料  Hugo官网 官方文档 官方主题 官方展示案例  社区资料  Hugo中文网站： 貌似有段时间没有更新了？  学习资料  Hogo handbook: 宋净超(Jimmy Song)同学整理的hugo使用资料 Hugo❤️ China User Group: 宋净超(Jimmy Song)同学组织，有个微信群可以申请加入  </description>
+    </item>
+    
+    <item>
+      <title>安装</title>
+      <link>http://eiuapp.github.io/learning-hugo/installation/</link>
+      <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/installation/</guid>
+      <description>准备工作 安装golang 安装hugo之前，先安装好golang。
+目前新版本的hugo如0.54版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
+安装 在Hugo Releases页面下载对应操作系统版本的安装包。
+Linux安装 找到linux的安装包，对于 ubuntu 可以直接用 deb 文件：
+ hugo_0.54_Linux-64bit.deb  deb文件直接安装即可。
+sudo dpkg -i hugo_0.54_Linux-64bit.deb  Mac安装 mac 下安装最简单的方式是用brew命令
+brew install hugo  也可以从下载页面下载到macos的安装包，解压后，将 hugo 可执行文件放在path路径下即可。
+安装后设置 验证安装：
+$ hugo version Hugo Static Site Generator v0.54.0-B1A82C61 linux/amd64 BuildDate: 2019-02-01T09:40:34Z  为了方便使用，增加hugo server 命令的 alias：
+alias h=&amp;quot;hugo server --disableFastRender&amp;quot;  自动发布 以下是jenkins自动生成并发布到nginx的简单脚本：
+sh update_academic.sh # clean cd /var/www/skyao/ # 删除所有文件和文件夹，但排除以&amp;quot;learning-&amp;quot;前缀开头的 rm -rf `ls | grep -v &amp;quot;learning-&amp;quot;` cd /var/lib/jenkins/workspace/skyao.</description>
+    </item>
+    
+    <item>
+      <title>快速开始</title>
+      <link>http://eiuapp.github.io/learning-hugo/installation/quickstart.html</link>
+      <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/installation/quickstart.html</guid>
+      <description>新建站点 hugo new side /path/tp/your/site  提示如下：
+$ hugo new site learning-cilium Congratulations! Your new Hugo site is created in /home/sky/work/code/learning/learning-cilium. Just a few more steps and you&#39;re ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.gohugo.io/, or create your own with the &amp;quot;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;quot; command. 2. Perhaps you want to add some content. You can add single files with &amp;quot;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>开启HTTPS</title>
+      <link>http://eiuapp.github.io/learning-hugo/installation/https.html</link>
+      <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/installation/https.html</guid>
+      <description>参考文章：
+ 给博客加上HTTPS 在Ubuntu上获取Let’s Encrypt免费证书  由于我用的博客服务器是ubuntu 16.04，因此部分命令稍有不同。
+生成证书 先安装工具：
+sudo apt-get install letsencrypt  生成证书：
+sudo letsencrypt certonly --webroot -w /var/www/skyao -d skyao.io  配置nginx 在/etc/nginx/sites-available下增加一个skyao.io.https站点文件，内容如下：
+server { listen 443 ssl; server_name skyao.io www.skyao.io; root /var/www/skyao; index index.html; ssl on; ssl_certificate /etc/letsencrypt/live/skyao.io/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/skyao.io/privkey.pem; }  然后将http请求都自动转为https，修改原来的skyao.io配置文件：
+server { listen 80; server_name skyao.io www.skyao.io; rewrite ^(.*)$ https://$host$1 permanent; }  重启nginx：
+sudo service nginx restart  设置自动更新证书 由于Let&amp;rsquo;s Encrypt证书的有效期为90天，所有我们需要定期更新以避免证书过期，通常Let&amp;rsquo;s Encrypt会发邮件提醒的。</description>
+    </item>
+    
+    <item>
+      <title>搜索引擎优化</title>
+      <link>http://eiuapp.github.io/learning-hugo/installation/seo.html</link>
+      <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/installation/seo.html</guid>
+      <description> 为了让Hugo网站更好的被搜索引擎收录，需要进行搜索引擎优化（SEO）。
+站点内容优化 修改配置 修改 hugo/config/_default 目录下的 params.toml 文件：
+description = &amp;quot;敖小剑的个人技术博客网站，主要关注服务网格,serverless,kubernetes,微服务等云原生技术。&amp;quot;  修改模板 0.54 版本下基本做的很好了，不再修改。
+添加页面信息 首先确保每个页面一定都要设置有 title，description，最好还有 keywords：
+title: 前言 keywords: - hugo - 学习笔记 - hugo学习笔记 description : &amp;quot;介绍Hugo学习笔记的基本资料和访问方式。&amp;quot;  google搜索优化 提交给Google网站站长 打开 Google网站站长，点击 &amp;ldquo;SEARCH CONSOLE &amp;rdquo; 进入，然后添加资源，如https://skyao.io/learning-hugo/。会要求下载一个html文件如google571325××××.html做验证，将这个文件保存到hugo站点根目录下的static子目录，更新站点内容让google search console可以访问到进行验证即可。
+进入资源页面，点&amp;rdquo;索引&amp;rdquo;下的&amp;rdquo;站点地图&amp;rdquo;，在&amp;rdquo;添加新的站点地图&amp;rdquo;处输入当前hugo站点的sitemap，这个文件hugo会默认生成，就在根路径下，如https://skyao.io/learning-hugo/sitemap.xml。
+百度搜索优化 打开 百度搜索资源平台 ，点击 链接提交，然后点&amp;rdquo;添加站点&amp;rdquo;。同样可以用文件验证的方式来进行网站验证。
+进入&amp;rdquo;数据引入&amp;rdquo;下的&amp;rdquo;链接提交&amp;rdquo;，再点 &amp;ldquo;自动提交&amp;rdquo; 下的 &amp;ldquo;sitemap&amp;rdquo;，在这里可以提交hugo网站的sitemap文件。注意百度不容许以子目录的方式提交子站点，和google不一样，我们的学习笔记 https://skyao.io/learning-hugo/ 就不能直接提交了，只能在提交sitemap文件时，提交多个sitemap文件。这样也能勉强让百度收录。
+参考资料 有参考以下资料，特此鸣谢：
+ 搜索引擎优化（SEO）: 来自宋静超的hugo handbook Front-End-Checklist - Github SEO 查询 - 站长之家 SEO Meta Tags Meta Description 从Hexo迁移到Hugo-送漂亮的Hugo Theme主题 Hugo website SEO Hugo SEO Markup  </description>
+    </item>
+    
+    <item>
+      <title>主题</title>
+      <link>http://eiuapp.github.io/learning-hugo/theme/</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/theme/</guid>
+      <description>Hugo有非常丰富的主题。
+后面会列出一些个人觉得不错的Hugo主题，然后重点推荐两个我自己在用的主题：
+ academic主题：用于我的个人博客网站 material-docs主题：用于我的学习笔记  </description>
+    </item>
+    
+    <item>
+      <title>academic主题</title>
+      <link>http://eiuapp.github.io/learning-hugo/theme/academic.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/theme/academic.html</guid>
+      <description>主题介绍 academic是一个特别适合搭建内容相对比较丰富的网站的主题，如果我们hugo网站的内容不仅仅是博客，还有其他好几种样式的内容，那么academic会是一个很不错的选择。此外，academic主题简洁大方，也适合作为一个稍有规模的正式网站。
+ 官网介绍：https://themes.gohugo.io/academic/ 我用academic主题搭建的个人技术博客网站: https://skyao.io  准备工作 git仓库准备 以建立skyao.io这个网站为例，fork github项目：
+ https://github.com/gcushen/hugo-academic: 修改仓库名为hugo-academic，这是自行订制的主题仓库，加cn后缀名以示区别。 https://github.com/sourcethemes/academic-kickstart: 修改仓库名为skyao.io，这是存放站点内容的仓库，为了方便起见，从官方的kickstart仓库开始改起，也方便未来保持更新。   备注：实际证明，academic的版本变化非常大，fork出来之后，再修改，到升级版本时到处是冲突，极易出错，很难正确处理。最后还是不得不从头来过：取到最新版本，然后手工将原有的改动重新再做一遍。
+ kickstart 项目就没有必要再fork了，hugo-academic 还是需要 fork 的。
+本地仓库准备 clone下来 kickstart 的仓库到本地：
+# 本地准备好academic主题仓库 git clone https://github.com/skyao/hugo-academic.git # 直接获取kickstart的内容作为建站的基础 git clone https://github.com/sourcethemes/academic-kickstart.git skyao.io cd skyao.io/ rm -rf .git .gitmodules rm -r themes/academic/  修改.gitignore文件内容如下：
+.* !.gitignore public/ themes/  修改update_academic.sh文件内容如下：
+#!/bin/bash if [ ! -d &amp;quot;themes&amp;quot; ];then echo &amp;quot;No themes directory, create it&amp;quot; mkdir themes fi if [ -d &amp;quot;themes/academic&amp;quot; ];then echo &#39;Find directoy &amp;quot;themes/academic&amp;quot;, update by &amp;quot;git pull&amp;quot;&#39; cd themes/academic git pull cd .</description>
+    </item>
+    
+    <item>
+      <title>material-docs主题</title>
+      <link>http://eiuapp.github.io/learning-hugo/theme/material-docs.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/theme/material-docs.html</guid>
+      <description>主题介绍 material-docs官网：
+http://themes.gohugo.io/theme/material-docs/
+这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。
+我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hugo学习笔记用的就是此主题。
+准备工作 Fork并定制 material-docs的github仓库已经有很长时间没有更新，基本停留在两年前。从实践中看，有很多问题，对新的hugo版本的支持也很不好。
+因此，采用fork的方式，建立自己的仓库：
+https://github.com/skyao/hugo-material-docs
+期间做了很多了更新：
+ PR那边有很多已经被发现而且修订提交的问题，但是一直没有merge，我手工合并到自己的仓库 弃用google统计，改用百度统计，具体做法和 academic 中的做法是一样的 同样进行了本地加速，参照 academic 中的做法 修改了layout文件，主要是删除了版权申明，作者信息，下载修改为意见反馈，现在的版面非常的干净，没有任何多余的东西 汉化，没有做标准的i18n，因为是给自己定制，因此直接在layout文件中修改为中文。 修改了exampleSite的内容，删除原有的页面和图片，改为学习笔记的常见页面如介绍，安装等，方便后续使用 提供了简单的gitbook模版文件支持，可以生成一个简单带有文字说明和链接的页面，以便将原有gitbook用户导流到新的hugo笔记  使用方式 以新建一个学习笔记为例，详细描述需要的步骤和命令。
+新建学习笔记  在github中新建仓库，名为 learning-cilium的Cilium学习笔记
+ 在本地新建一个hugo站点
+hugo new site learning-cilium cd learning-cilium  下载更新主题的脚本并执行
+wget https://raw.githubusercontent.com/skyao/hugo-material-docs/master/exampleSite/update_theme.sh chmod +x update_theme.sh ./update_theme.sh  命令完成之后，themes/hugo-material-docs目录下就有我们自己的主题文件内容。
+ 从exampleSite目录复制需要的站点初始化文件到新站点
+cd themes/hugo-material-docs # 复制config.toml文件 cp config.toml ../../../config.toml # 复制content目录和static目录 cp -r content/ ../../../content/ cp -r static/ ../../../static/ # 复制gitignore文件 cp gitignore-example .</description>
+    </item>
+    
+    <item>
+      <title>主题列表</title>
+      <link>http://eiuapp.github.io/learning-hugo/theme/theme.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/theme/theme.html</guid>
+      <description> 在这里列出一些个人觉得不错的Hugo主题。
+门户类 文档类 可以看官网的分类：
+https://themes.gohugo.io/tags/documentation/
+列出一些觉得还不错的：
+ DocuAPI
+类slate风格，带code example列，特别适合API文档和配置文档。
+https://themes.gohugo.io/docuapi/
+看demo效果相当的不错！！
+ Material Docs
+非常漂亮的文档主题。
+https://themes.gohugo.io/material-docs/
+ docDock
+中规中矩，但是感觉界面不够精致，没有Material Docs的惊艳感。
+https://themes.gohugo.io/docdock/
+ Bootie Docs
+适合文档，尤其软件文档。
+https://themes.gohugo.io/bootie-docs/
+自带TOC功能。
+ simpledoc
+单页文档，适合Q&amp;amp;A之类。
+https://themes.gohugo.io/hugo-simpledoc-theme/
+ learn
+类似gitbook。
+https://themes.gohugo.io/hugo-theme-learn/
+ Alabaster
+类似gitbook，稍显呆板。
+https://themes.gohugo.io/hugo-alabaster-theme/
+ Kube
+带blog/faq，适合用于小型项目。
+https://themes.gohugo.io/kube/
+  </description>
+    </item>
+    
+    <item>
+      <title>主题比较</title>
+      <link>http://eiuapp.github.io/learning-hugo/theme/theme-compare.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0800</pubDate>
+      
+      <guid>http://eiuapp.github.io/learning-hugo/theme/theme-compare.html</guid>
+      <description>在这里列出一些个人觉得不错的Hugo主题。
+门户类 文档类 可以看官网的分类：
+https://themes.gohugo.io/tags/documentation/
+列出一些觉得还不错的：
+   主题\特性 TOC 评论 TAG SEARCH i18n Star Edit 总结     Learn Y   Y 原生 Y Y Y 类似gitbook   Beautiful Y   Y Y      Material Docs      Y N    DocuAPI        类slate风格，带code example列，特别适合API文档和配置文档。   Alabaster      Y     Bootie Docs Y 自带       自带TOC     DocuAPI</description>
+    </item>
+    
+  </channel>
+</rss>

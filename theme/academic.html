@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+    <title>academic主题 - Hugo学习笔记</title>
+    <meta name="generator" content="Hugo 0.51" />
+
+    
+    <meta name="description" content="介绍hugo的academic主题，使用方式和订制化">
+
+    <meta name="keywords" content="theme, academic, academic主题">
+    <link rel="canonical" href="http://eiuapp.github.io/learning-hugo/theme/academic.html">
+    
+    <meta name="author" content="敖小剑">
+    
+
+    <meta property="og:url" content="http://eiuapp.github.io/learning-hugo/theme/academic.html">
+    <meta property="og:title" content="academic主题 - Hugo学习笔记">
+    <meta property="og:description" content="介绍hugo的academic主题，使用方式和订制化">
+    <meta property="og:image" content="http://eiuapp.github.io/learning-hugo/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="academic主题 - Hugo学习笔记">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://eiuapp.github.io/learning-hugo/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot');
+        src: url('http://eiuapp.github.io/learning-hugo/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.woff')
+               format('woff'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.ttf')
+               format('truetype'),
+             url('http://eiuapp.github.io/learning-hugo/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/application.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="http://eiuapp.github.io/learning-hugo/local/fonts.googleapis.com/css.css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/modernizr.js"></script>
+
+    
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="alternate" type="application/rss+xml" title="Hugo学习笔记" />
+    <link href="http://eiuapp.github.io/learning-hugo/index.xml" rel="feed" type="application/rss+xml" title="Hugo学习笔记" />
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        academic主题
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/skyao" title="@skyao on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/skyao/learning-hugo" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="http://eiuapp.github.io/learning-hugo/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Hugo学习笔记 </strong>
+        
+          <br>
+          skyao/learning-hugo
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-stars">
+            <a href="https://github.com/skyao/learning-hugo/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+          <li class="repo-download">
+            <a href="https://github.com/skyao/learning-hugo/issues" target="_blank" title="Issues" data-action="download">
+              <i class="icon icon-download"></i> 意见反馈
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+
+
+<li>
+  
+    
+
+
+<a  title="前言" href="http://eiuapp.github.io/learning-hugo/">
+	
+	前言
+</a>
+
+
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="介绍" href="http://eiuapp.github.io/learning-hugo/introduction/">
+	
+	介绍
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="资料" href="http://eiuapp.github.io/learning-hugo/introduction/information.html">
+	
+	资料
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="安装" href="http://eiuapp.github.io/learning-hugo/installation/">
+	
+	安装
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="快速开始" href="http://eiuapp.github.io/learning-hugo/installation/quickstart.html">
+	
+	快速开始
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="开启HTTPS" href="http://eiuapp.github.io/learning-hugo/installation/https.html">
+	
+	开启HTTPS
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="搜索引擎优化" href="http://eiuapp.github.io/learning-hugo/installation/seo.html">
+	
+	搜索引擎优化
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+<li>
+  
+    
+
+
+<a  title="主题" href="http://eiuapp.github.io/learning-hugo/theme/">
+	
+	主题
+</a>
+
+
+
+
+    <ul>
+      
+        
+        <li>
+          
+            
+
+
+<a class="current" title="academic主题" href="http://eiuapp.github.io/learning-hugo/theme/academic.html">
+	
+	academic主题
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="material-docs主题" href="http://eiuapp.github.io/learning-hugo/theme/material-docs.html">
+	
+	material-docs主题
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题列表" href="http://eiuapp.github.io/learning-hugo/theme/theme.html">
+	
+	主题列表
+</a>
+
+
+
+          
+        </li>
+      
+        
+        <li>
+          
+            
+
+
+<a  title="主题比较" href="http://eiuapp.github.io/learning-hugo/theme/theme-compare.html">
+	
+	主题比较
+</a>
+
+
+
+          
+        </li>
+      
+    </ul>
+
+  
+</li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>academic主题 </h1>
+
+			
+
+<h2 id="主题介绍">主题介绍</h2>
+
+<p>academic是一个特别适合搭建内容相对比较丰富的网站的主题，如果我们hugo网站的内容不仅仅是博客，还有其他好几种样式的内容，那么academic会是一个很不错的选择。此外，academic主题简洁大方，也适合作为一个稍有规模的正式网站。</p>
+
+<ul>
+<li>官网介绍：<a href="https://themes.gohugo.io/academic/">https://themes.gohugo.io/academic/</a></li>
+<li>我用academic主题搭建的个人技术博客网站: <a href="https://skyao.io">https://skyao.io</a></li>
+</ul>
+
+<h2 id="准备工作">准备工作</h2>
+
+<h3 id="git仓库准备">git仓库准备</h3>
+
+<p>以建立skyao.io这个网站为例，fork github项目：</p>
+
+<ol>
+<li><a href="https://github.com/gcushen/hugo-academic:">https://github.com/gcushen/hugo-academic:</a> 修改仓库名为hugo-academic，这是自行订制的主题仓库，加cn后缀名以示区别。</li>
+<li><a href="https://github.com/sourcethemes/academic-kickstart:">https://github.com/sourcethemes/academic-kickstart:</a> 修改仓库名为skyao.io，这是存放站点内容的仓库，为了方便起见，从官方的kickstart仓库开始改起，也方便未来保持更新。</li>
+</ol>
+
+<blockquote>
+<p>备注：实际证明，academic的版本变化非常大，fork出来之后，再修改，到升级版本时到处是冲突，极易出错，很难正确处理。最后还是不得不从头来过：取到最新版本，然后手工将原有的改动重新再做一遍。</p>
+</blockquote>
+
+<p>kickstart 项目就没有必要再fork了，hugo-academic 还是需要 fork 的。</p>
+
+<h3 id="本地仓库准备">本地仓库准备</h3>
+
+<p>clone下来 kickstart 的仓库到本地：</p>
+
+<pre><code class="language-bash"># 本地准备好academic主题仓库
+git clone https://github.com/skyao/hugo-academic.git
+# 直接获取kickstart的内容作为建站的基础
+git clone https://github.com/sourcethemes/academic-kickstart.git skyao.io
+cd skyao.io/
+rm -rf .git .gitmodules
+rm -r themes/academic/
+</code></pre>
+
+<p>修改<code>.gitignore</code>文件内容如下：</p>
+
+<pre><code class="language-bash">.*
+!.gitignore
+public/
+themes/
+</code></pre>
+
+<p>修改<code>update_academic.sh</code>文件内容如下：</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+if [ ! -d &quot;themes&quot; ];then
+  echo &quot;No themes directory, create it&quot;
+  mkdir themes
+fi
+
+if [ -d &quot;themes/academic&quot; ];then
+  echo 'Find directoy &quot;themes/academic&quot;, update by &quot;git pull&quot;'
+  cd themes/academic
+  git pull
+  cd ../../
+else
+  echo 'Directoy &quot;themes/academic&quot; not found, do &quot;ln -s&quot;'
+  cd themes
+  ln -s ../../hugo-academic academic
+  cd ../
+fi
+</code></pre>
+
+<p>执行命令 <code>sh update_academic.sh</code> 获取 academic 主题文件(实际是一个ln过程)。此时<code>themes/academic</code>是我们订制的主题内容，此时两个git仓库都可以分别提交内容，而且实时生效，非常方便本地修改。</p>
+
+<h2 id="创建网站">创建网站</h2>
+
+<h3 id="使用-examplesite-初始化">使用 exampleSite 初始化</h3>
+
+<p>删除｀skyao.io｀目录下的config.toml文件和content/static目录，然后从｀themes/academic/exampleSite｀下的这三个文件和目录复制到｀skyao.io｀目录下。执行<code>hugo server</code>命令，就可以通过浏览器访问 <a href="http://localhost:1313/">http://localhost:1313/</a> 看到示例站点。</p>
+
+<p>我们从这个基础开始进行修改和订制。</p>
+
+<h2 id="修改配置">修改配置</h2>
+
+<p>注意新版本的hugo将原来的单个config.toml配置文件拆分为多个配置文件，这些配置文件在 config/_default 目录下。</p>
+
+<h3 id="修改config-toml文件">修改config.toml文件</h3>
+
+<pre><code class="language-toml">title = &quot;敖小剑的博客&quot;
+copyright = &quot;skyao.io &amp;copy; 2019&quot;
+googleAnalytics = &quot;17048c9d4209e5d08a9ae5b0b4160808&quot;
+
+# 修改默认语言，需要对应的在languages.toml添加中文
+defaultContentLanguage = &quot;zh&quot;
+hasCJKLanguage = true
+
+paginate = 20
+</code></pre>
+
+<h3 id="修改languages-toml">修改languages.toml</h3>
+
+<p>先只替换默认语言为中文，暂时不启用多语言版本。</p>
+
+<pre><code class="language-toml"># 注释掉en
+#[en]
+#  languageCode = &quot;en-us&quot;
+
+# 添加中文
+[zh]
+  languageCode = &quot;zh-Hans&quot;
+</code></pre>
+
+<p>如果要调整页面上的字眼，需要修改主题文件中的 i18n 文件，如<code>themes/academic/i18n/zh.yaml</code>。</p>
+
+<p>如果要修改 publication_types 的显示，需要参考 <code>themes/academic/layouts/partials</code> 下 pub_types.html 的内容，在 <code>themes/academic/i18n/zh.yaml</code> 文件中加入对应的内容：</p>
+
+<pre><code class="language-toml">- id: pub_uncat
+  translation: 未分组
+- id: pub_conf
+  translation: 会议记录
+- id: pub_journal
+  translation: 期刊文章
+- id: pub_manuscript
+  translation: 手稿
+- id: pub_report
+  translation: 技术报告
+- id: pub_book
+  translation: 书籍
+- id: pub_book_section
+  translation: 书籍摘抄
+</code></pre>
+
+<h3 id="修改params-toml">修改params.toml</h3>
+
+<pre><code class="language-toml">color_theme = &quot;1950s&quot;
+
+description = &quot;敖小剑的个人技术博客网站，主要关注服务网格,serverless,kubernetes,微服务等云原生技术。&quot;
+
+# 这个还不知道该如何设置
+sharing_image = &quot;&quot;
+
+twitter = &quot;SkyAoXiaojian&quot;
+
+date_format = &quot;2006-01-02&quot;
+time_format = &quot;15:04&quot;
+
+email = &quot;aoxiaojian@hotmail.com&quot;
+phone = &quot;&quot;
+address = &quot;广州市天河区广电平云广场B塔15楼&quot;
+office_hours = &quot;&quot;
+
+contact_links = [
+  {icon = &quot;twitter&quot;, icon_pack = &quot;fab&quot;, name = &quot;DM Me&quot;, link = &quot;https://twitter.com/SkyAoXiaojian&quot;},
+  # {icon = &quot;skype&quot;, icon_pack = &quot;fab&quot;, name = &quot;Skype Me&quot;, link = &quot;skype:echo123?call&quot;},
+  # {icon = &quot;keybase&quot;, icon_pack = &quot;fab&quot;, name = &quot;Chat on Keybase&quot;, link = &quot;https://keybase.io/&quot;},
+  # {icon = &quot;comments&quot;, icon_pack = &quot;fas&quot;, name = &quot;Discuss on Forum&quot;, link = &quot;https://discourse.gohugo.io&quot;},
+  # {icon = &quot;telegram&quot;, icon_pack = &quot;fab&quot;, name = &quot;Telegram Me&quot;, link = &quot;https://telegram.me/@Telegram&quot;},
+  ]
+  
+  reading_time = false
+  comment_count = false
+  
+  [publications]
+  date_format = &quot;2006-01-02&quot;
+</code></pre>
+
+<h3 id="修改menus-toml">修改menus.toml</h3>
+
+<pre><code class="language-toml">[[main]]
+  name = &quot;首页&quot;
+  url = &quot;#about&quot;
+  weight = 1
+
+[[main]]
+  name = &quot;演讲分享&quot;
+  url = &quot;/talk/&quot;
+  weight = 2
+
+[[main]]
+  name = &quot;出版作品&quot;
+  url = &quot;/publication/&quot;
+  weight = 3
+
+[[main]]
+  name = &quot;技术博客&quot;
+  url = &quot;/post/&quot;
+  weight = 4
+
+[[main]]
+  name = &quot;开源项目&quot;
+  url = &quot;#projects&quot;
+  weight = 5
+
+[[main]]
+  name = &quot;学习笔记&quot;
+  url = &quot;/learning/&quot;
+  weight = 6
+
+[[main]]
+  name = &quot;内容标签&quot;
+  url = &quot;#tags&quot;
+  weight = 7
+
+[[main]]
+  name = &quot;和我联系&quot;
+  url = &quot;#contact&quot;
+  weight = 8
+</code></pre>
+
+<h2 id="订制首页">订制首页</h2>
+
+<p>需要修改的文件在 content/home 目录下。</p>
+
+<p>关闭部分不需要的内容（设置active = false）：</p>
+
+<ul>
+<li>accomplishments.md</li>
+<li>experience.md</li>
+<li>skills.md</li>
+<li>teaching.md</li>
+</ul>
+
+<h3 id="about-md">about.md</h3>
+
+<pre><code class="language-toml">title = &quot;简介&quot;
+</code></pre>
+
+<p>然后修改 author/admin 下的文件，如替换头像，修改_index.md:</p>
+
+<pre><code class="language-toml">name = &quot;敖小剑&quot;
+role = &quot;中年码农&quot;
+organizations = [ { name = &quot;Dreamfly.io&quot;, url = &quot;https://dreamfly.io&quot; } ]
+bio = &quot;我目前研究的方向主要在微服务/Microservice、服务网格/Servicemesh、无服务器架构/Serverless等和云原生/Cloud Native相关的领域，欢迎交流和指导&quot;
+email = &quot;aoxiaojian@hotmail.com&quot;
+interests = [
+    &quot;微服务/Micro Service&quot;,
+    &quot;服务网格/Service Mesh&quot;,
+    &quot;无服务器架构/Serverless&quot;,
+    &quot;云原生/Cloud Native&quot;,
+    &quot;敏捷/DevOps&quot;
+]
+
+[[education.courses]] # 删除
+
+## 图标的代码需要在 https://fontawesome.com 网站上查找
+[[social]]
+  icon = &quot;envelope&quot;
+  icon_pack = &quot;fas&quot;
+  link = &quot;mailto:aoxiaojian@hotmail.com&quot;  # For a direct email link, use &quot;mailto:test@example.org&quot;.
+
+[[social]]
+  icon = &quot;twitter&quot;
+  icon_pack = &quot;fab&quot;
+  link = &quot;https://twitter.com/SkyAoXiaojian&quot;
+
+[[social]]
+  icon = &quot;github&quot;
+  icon_pack = &quot;fab&quot;
+  link = &quot;https://github.com/skyao&quot;
+
+[[social]]
+  icon = &quot;git&quot;
+  icon_pack = &quot;fab&quot;
+  link = &quot;//legacy.gitbook.com/@skyao&quot;
+
+[[social]]
+  icon = &quot;weibo&quot;
+  icon_pack = &quot;fab&quot;
+  link = &quot;//weibo.com/aoxiaojian&quot;
+
+[[social]]
+  icon = &quot;youtube&quot;
+  icon_pack = &quot;fab&quot;
+  link = &quot;//www.youtube.com/channel/UCKeIYzzIeOtVR1iSfAdRBqQ&quot;
+  
+  
+增加个人简介
+</code></pre>
+
+<h3 id="hero-md">hero.md</h3>
+
+<p>暂时 禁用，后面再来设置</p>
+
+<pre><code class="language-toml">title = &quot;SOFAMesh&quot;
+overlay_img = &quot;projects/sofamesh-wide.jpg&quot; # 记得把图片放到static/img/下
+
+# 其他内容酌情修改
+</code></pre>
+
+<p>hero_carousel.md 是另一个版本的hero，横屏，可以多个话题滑动，效果更好的感觉。后面再整理。</p>
+
+<h3 id="posts-md">posts.md</h3>
+
+<pre><code class="language-toml">title = &quot;技术博客&quot;
+count = 10
+
+view = 2
+</code></pre>
+
+<p>修改 content/posts/_index.md 文件：</p>
+
+<pre><code class="language-toml">title = &quot;技术博客&quot;
+view = 3
+</code></pre>
+
+<h3 id="publications-md">publications.md</h3>
+
+<pre><code class="language-toml">title = &quot;出版作品&quot;
+count = 5
+weight = 30
+
+view = 3
+exclude_featured = true
+</code></pre>
+
+<p>修改 content/publications/_index.md 文件：</p>
+
+<pre><code class="language-toml">title = &quot;出版作品&quot;
+view = 3
+</code></pre>
+
+<h3 id="publications-featured-md">publications_featured.md</h3>
+
+<pre><code class="language-toml">title = &quot;特别推荐&quot;
+</code></pre>
+
+<h3 id="tags-md">tags.md</h3>
+
+<pre><code class="language-toml">title = &quot;内容标签&quot;
+</code></pre>
+
+<h3 id="projects-md">projects.md</h3>
+
+<pre><code class="language-toml">title = &quot;开源项目&quot;
+</code></pre>
+
+<h3 id="contact-md">contact.md</h3>
+
+<pre><code class="language-toml">title = &quot;和我联系&quot;
+</code></pre>
+
+<h3 id="talks-md">talks.md</h3>
+
+<pre><code class="language-tom">title = &quot;演讲分享&quot;
+count = 5
+weight = 20
+</code></pre>
+
+<p>修改talks_selected.md:</p>
+
+<pre><code class="language-tom">title = &quot;下一站&quot;
+subtitle = &quot;近期活动，欢迎关注&quot;
+</code></pre>
+
+<h3 id="修改post">修改post</h3>
+
+<p>修改 content/posts/_index.md</p>
+
+<pre><code class="language-to">title = &quot;技术博客&quot;
+
+# 在页面 http://localhost:1313/post/ 显示一张图片
+[header]
+image = &quot;&quot;
+caption = &quot;&quot;
+</code></pre>
+
+<h3 id="修改project">修改project</h3>
+
+<p>project没有要修改的内容。</p>
+
+<h3 id="修改publications">修改publications</h3>
+
+<p>修改 content/publication/_index.md</p>
+
+<pre><code class="language-tom">title = &quot;最近发表&quot;
+[header]
+image = &quot;&quot;
+caption = &quot;&quot;
+</code></pre>
+
+<h3 id="增加-learning">增加 learning</h3>
+
+<p>新版本提供了 content/tutorials 的实例，不过没有挂在首页，不容易发现。</p>
+
+<p>官方说明是适合用于：</p>
+
+<ul>
+<li>项目或者软件文档</li>
+<li>在线课程</li>
+<li>教程</li>
+</ul>
+
+<p>我这次用它来记录我的学习笔记，因为数量繁多不好整理，一直都没有放在个人网站上。</p>
+
+<p>具体修改内容如下：</p>
+
+<ol>
+<li><p>重命名 <code>content/tutorials</code> 为 <code>content/learning</code>，通过 <a href="http://localhost:1313/learning/">http://localhost:1313/learning/</a> 可以访问</p></li>
+
+<li><p>由于目录被改名，所以左边的菜单报错，修改修改<code>example.md</code>中</p>
+
+<pre><code class="language-toml">[menu.learning] # 将menu.tutorial修改为menu.learning
+  parent = &quot;Example Topic&quot;
+  weight = 1
+</code></pre>
+
+<p>修改<code>_index.md</code>:</p>
+
+<pre><code class="language-toml">[menu.learning] # 将menu.tutorial修改为menu.learning
+  name = &quot;Overview&quot;
+  weight = 1
+</code></pre>
+
+<p>菜单恢复正常</p></li>
+
+<li><p>在顶部的导航条中增加链接</p>
+
+<p>修改<code>config.toml</code>，增加菜单：</p>
+
+<pre><code class="language-toml">[[menu.main]]
+  name = &quot;学习笔记&quot;
+  url = &quot;/learning/&quot;
+  weight = 5
+</code></pre></li>
+
+<li><p>修改<code>themes/academic/layouts/partials/docs_layout.html</code>，注释掉一下内容：</p>
+
+<pre><code class="language-html">&lt;!--
+&lt;div class=&quot;body-footer&quot;&gt;
+{{ i18n &quot;last_updated&quot; }} {{ $.Lastmod.Format $.Site.Params.date_format }}
+&lt;/div&gt;
+--&gt;
+</code></pre>
+
+<p>不直接显示最后修改时间在页面上，这样界面清爽一些。</p></li>
+</ol>
+
+<h3 id="slides功能">slides功能</h3>
+
+<p>在content/slides下发现一个 example-slides.md 文件，用浏览器打开下面的地址：</p>
+
+<p><a href="http://localhost:1313/slides/example-slides/">http://localhost:1313/slides/example-slides/</a></p>
+
+<p>发现原来是一个用markdown书写slides的功能，很有意思，稍后研究。</p>
+
+<h3 id="图标和其他文件设置">图标和其他文件设置</h3>
+
+<p>复制 icon.png / icon-192.png 到 static/img 目录下。</p>
+
+<p>复制 baidu_verify_××××.html 和 google××××.html 到 static 目录下。</p>
+
+<h2 id="优化">优化</h2>
+
+<h3 id="关闭google地图">关闭google地图</h3>
+
+<p>首页的google地图现实，太影响页面打开速度。最后选择关闭。修改config.toml:</p>
+
+<pre><code class="language-toml">  map = 0 # 最后还是决定关闭地图现实，太影响页面打开速度
+</code></pre>
+
+<h3 id="去掉github项目的star显示">去掉github项目的star显示</h3>
+
+<p>在hero页面上，默认设置会去取github项目的star数量，同样非常的拖累整体速度。还是去掉吧，修改文件<code>content/home</code>，删除以下内容：</p>
+
+<pre><code class="language-html">  &lt;a id=&quot;academic-release&quot; href=&quot;https://github.com/alipay/sofa-mesh/releases&quot; data-repo=&quot;alipay/sofa-mesh&quot;&gt;
+  Latest release &lt;!-- V --&gt;
+  &lt;/a&gt;
+&lt;div class=&quot;mt-3&quot;&gt;
+  Star
+&lt;/div&gt;
+&lt;script async defer src=&quot;/local/buttons.github.io/buttons.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h3 id="改google-analytics为百度统计">改google analytics为百度统计</h3>
+
+<p>修改 <code>academic/layouts/partials/header.html</code>，将下面原来用于google analytics的内容：</p>
+
+<pre><code class="language-go">  {{ if not .Site.IsServer }}
+  {{ if .Site.GoogleAnalytics }}
+    &lt;script&gt;
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+      {{ if .Site.Params.privacy_pack }}ga('set', 'anonymizeIp', true);{{ end }}
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    &lt;/script&gt;
+    &lt;script async src=&quot;//www.google-analytics.com/analytics.js&quot;&gt;&lt;/script&gt;
+    {{ if ($scr.Get &quot;use_cdn&quot;) }}
+    {{ printf &quot;&lt;script async src=\&quot;%s\&quot; integrity=\&quot;%s\&quot; crossorigin=\&quot;anonymous\&quot;&gt;&lt;/script&gt;&quot; (printf $js.autotrack.url $js.autotrack.version) $js.autotrack.sri | safeHTML }}
+    {{ end }}
+  {{ end }}
+  {{ end }}
+</code></pre>
+
+<p>修改为百度统计的内容：</p>
+
+<pre><code class="language-toml">  {{ if not .Site.IsServer }}
+  {{ if .Site.GoogleAnalytics }}
+	&lt;script&gt;
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement(&quot;script&quot;);
+	  hm.src = &quot;https://hm.baidu.com/hm.js?{{ .Site.GoogleAnalytics }}&quot;;
+	  var s = document.getElementsByTagName(&quot;script&quot;)[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	&lt;/script&gt;
+  {{ end }}
+  {{ end }}
+</code></pre>
+
+<h3 id="本地文件加速">本地文件加速</h3>
+
+<p>使用中，发现网页装载速度不是很好，而且有时无法访问。检查后发现问题出现在页面上的一些静态文件下载上，使用的路径居然是<code>https://cdnjs.cloudflare.com/××</code>。</p>
+
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==&quot; crossorigin=&quot;anonymous&quot;&gt;
+</code></pre>
+
+<p>cloudflare网站是在国外，访问速度慢，而且非常不稳定：经常被墙。导致页面加载的速度慢，有时还会出现无法打开页面的问题（被墙）。解决的方式就是将这些文件放在网站本地，从而避开这个问题。</p>
+
+<p>具体做法：</p>
+
+<ol>
+<li>修改 <code>themes/academic/data/assets.toml</code>，将类似<code>https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js</code> 的地址修改为 <code>/local/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js</code></li>
+<li>修改 <code>fonts.googleapis.com/css.css</code> 文件，用 <code>/local/fonts</code> 替换 <code>https://fonts</code> ，将原来访问<code>https://fonts.gstatic.com</code>的地址指到本地。</li>
+<li>修改 <code>themes/academic/</code> 下的文件，将类似 <code>//cdnjs.cloudflare.com</code> 的地址替换为 <code>/local/cdnjs.cloudflare.com</code>
+
+<ul>
+<li>layouts/partials/header.html</li>
+<li>layouts/partials/footer.html</li>
+<li>layouts/partials/cookie_consent.html</li>
+<li>layouts/slides/baseof.html</li>
+</ul></li>
+<li>然后将上述这些地址所指向的文件存放在<code>static/img/local</code>目录下，最大的工作量在这里。</li>
+</ol>
+
+<p>最终的目标是实现下面第一个地址修改为第二个地址。</p>
+
+<ul>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js</a></li>
+<li><a href="https://127.0.0.1:1313/local/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js">https://127.0.0.1:1313/local/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js</a></li>
+</ul>
+
+<p>小技巧：</p>
+
+<ol>
+<li>用chrome浏览器的开发工具，看network，就知道有哪些文件是走remote访问了</li>
+<li><code>find -type f -exec grep -H &quot;//cdn&quot; {} \;</code> 这样的命令可以方便的查找存在问题的文件</li>
+</ol>
+
+<h2 id="主题模板调整">主题模板调整</h2>
+
+<p>0.54 版本的 academic 主题，在 post、publication、talk 等几个列表显示时，都不再提供图片显示，效果和之前版本差别好大，因此考虑修改模板。</p>
+
+<p><code>academic/layouts/partials/widgets</code></p>
+
+<h3 id="talk">talk</h3>
+
+<p>修改 <code>themes/academic/layouts/partials/talk_li_card.html</code> 文件。</p>
+
+<p>下面的内容，只显示日期，不显示具体时间。然后显示publication信息</p>
+
+<pre><code class="language-html">  &lt;div class=&quot;talk-metadata&quot; itemprop=&quot;startDate&quot;&gt;
+    {{ $date := .Params.time_start | default .Date }}
+    {{ (time $date).Format $.Site.Params.date_format }} @ {{ .Params.publication }}
+  &lt;/div&gt;
+</code></pre>
+
+<p>原有的这段内容删除，非常难看：</p>
+
+<pre><code class="language-html">{{ (time $date).Format $.Site.Params.date_format }}
+    {{ if not .Params.all_day }}
+      {{ (time $date).Format ($.Site.Params.time_format | default &quot;3:04 PM&quot;) }}
+      {{ with .Params.time_end }}
+        &amp;mdash; {{ (time .).Format ($.Site.Params.time_format | default &quot;3:04 PM&quot;) }}
+      {{ end }}
+    {{ end }}
+</code></pre>
+
+<p>删除一下内容，新版本的 featured image 的显示丑的没法忍：</p>
+
+<pre><code class="language-html">  {{ $resource := (.Resources.ByType &quot;image&quot;).GetMatch &quot;*featured*&quot; }}
+  {{ $anchor := .Params.image.focal_point | default &quot;Smart&quot; }}
+  {{ with $resource }}
+  {{ $image := .Fill (printf &quot;918x517 q90 %s&quot; $anchor) }}
+  &lt;div&gt;
+    &lt;a href=&quot;{{ $.RelPermalink }}&quot;&gt;
+      &lt;img src=&quot;{{ $image.RelPermalink }}&quot; class=&quot;article-banner&quot; itemprop=&quot;image&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  {{end}}
+</code></pre>
+
+<p>将旧版本的横幅图片显示搬回来，在上面位置加入如下内容：</p>
+
+<pre><code class="language-html">  {{ if .Params.image_preview }}
+    {{ .Scratch.Set &quot;image&quot; .Params.image_preview }}
+  {{ else if .Params.header.image }}
+    {{ .Scratch.Set &quot;image&quot; .Params.header.image }}
+  {{ end }}
+  {{ if .Scratch.Get &quot;image&quot; }}
+  &lt;div&gt;
+    &lt;a href=&quot;{{ .RelPermalink }}&quot;&gt;
+      {{ $img_src := urls.Parse (.Scratch.Get &quot;image&quot;) }}
+      {{ if $img_src.Scheme }}
+        &lt;img src=&quot;{{ .Scratch.Get &quot;image&quot; }}&quot; class=&quot;article-banner&quot; itemprop=&quot;image&quot;&gt;
+      {{ else }}
+        &lt;img src=&quot;{{ &quot;/img/&quot; | relURL }}{{ .Scratch.Get &quot;image&quot; }}&quot; class=&quot;article-banner&quot; itemprop=&quot;image&quot;&gt;
+      {{ end }}
+    &lt;/a&gt;
+  &lt;/div&gt;
+  {{ end }}
+</code></pre>
+
+<h3 id="publication">publication</h3>
+
+<p>修改 <code>themes/academic/layouts/partials/publication_li_card.html</code> 文件。</p>
+
+<p>同样去掉featured images的代码，也同样将原来的横幅图片显示搬回来。</p>
+
+<p>然后作者信息在最上面，有些不好看，将这行移动到下面一点的位置：</p>
+
+<pre><code class="language-html">{{ partial &quot;page_metadata&quot; (dict &quot;content&quot; $ &quot;is_list&quot; 1) }}
+</code></pre>
+
+<h3 id="post">post</h3>
+
+<p>修改 <code>themes/academic/layouts/partials/post_li_card.html</code> 文件。</p>
+
+<p>同样去掉featured images的代码，也同样将原来的横幅图片显示搬回来。</p>
+
+<h3 id="project">project</h3>
+
+<p>暂时还不清楚如何设置，后面再弄。</p>
+
+<h3 id="leanging">leanging</h3>
+
+<p>学习笔记中，0.54 版本不再显示 header images了，改回来。</p>
+
+<p>需要修改 <code>themes/academic/layouts/partials/doc_layout.html</code> 文件 ，加入</p>
+
+<p><code>{{ partial &quot;header_image.html&quot; . }}</code> 这一行代码：</p>
+
+<pre><code class="language-html">      &lt;article class=&quot;article&quot; itemscope itemtype=&quot;http://schema.org/Article&quot;&gt;
+
+        {{ partial &quot;header_image.html&quot; . }}
+
+        &lt;div class=&quot;docs-article-container&quot;&gt;
+</code></pre>
+
+<p>然后将老版本的 header_image.html 文件复制到 themes/academic/layouts/partials/ 目录下。</p>
+
+
+
+
+			<footer class="footer">
+				
+
+
+
+
+
+
+    
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+      <a href="http://eiuapp.github.io/learning-hugo/theme/" title="主题">
+        <span class="direction">
+          上一页
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              主题
+            </div>
+          </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="next">
+  
+  
+      <a href="http://eiuapp.github.io/learning-hugo/theme/material-docs.html" title="material-docs主题">
+        <span class="direction">
+          下一页
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              material-docs主题
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'http:\/\/eiuapp.github.io\/learning-hugo\/';
+      var repo_id  = 'skyao\/learning-hugo';
+    
+    </script>
+
+    <script src="http://eiuapp.github.io/learning-hugo/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+ 	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?c7442f5794ea2abb71c6ff05dc0b8779";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+    
+
+    <script src="http://eiuapp.github.io/learning-hugo/local/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
