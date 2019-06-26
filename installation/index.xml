@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo学习笔记</title>
-    <link>http://eiuapp.github.io/learning-hugo/installation.html</link>
+    <link>https://eiuapp.github.io/learning-hugo/installation.html</link>
     <description>Recent content on Hugo学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 10 Sep 2018 21:07:13 +0800</lastBuildDate>
     
-	<atom:link href="http://eiuapp.github.io/learning-hugo/installation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://eiuapp.github.io/learning-hugo/installation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>安装</title>
-      <link>http://eiuapp.github.io/learning-hugo/installation/</link>
+      <link>https://eiuapp.github.io/learning-hugo/installation/</link>
       <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/installation/</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/installation/</guid>
       <description>准备工作 安装golang 安装hugo之前，先安装好golang。
 目前新版本的hugo如0.54版本，需要golang最新的1.11版本支持。安装hugo前最好检查一下hugo对golang的版本要求。
 安装 在Hugo Releases页面下载对应操作系统版本的安装包。
@@ -32,20 +32,20 @@ sh update_academic.sh # clean cd /var/www/skyao/ # 删除所有文件和文件�
     
     <item>
       <title>快速开始</title>
-      <link>http://eiuapp.github.io/learning-hugo/installation/quickstart.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/installation/quickstart.html</link>
       <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/installation/quickstart.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/installation/quickstart.html</guid>
       <description>新建站点 hugo new side /path/tp/your/site  提示如下：
 $ hugo new site learning-cilium Congratulations! Your new Hugo site is created in /home/sky/work/code/learning/learning-cilium. Just a few more steps and you&#39;re ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.gohugo.io/, or create your own with the &amp;quot;hugo new theme &amp;lt;THEMENAME&amp;gt;&amp;quot; command. 2. Perhaps you want to add some content. You can add single files with &amp;quot;hugo new &amp;lt;SECTIONNAME&amp;gt;/&amp;lt;FILENAME&amp;gt;.</description>
     </item>
     
     <item>
       <title>开启HTTPS</title>
-      <link>http://eiuapp.github.io/learning-hugo/installation/https.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/installation/https.html</link>
       <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/installation/https.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/installation/https.html</guid>
       <description>参考文章：
  给博客加上HTTPS 在Ubuntu上获取Let’s Encrypt免费证书  由于我用的博客服务器是ubuntu 16.04，因此部分命令稍有不同。
 生成证书 先安装工具：
@@ -58,10 +58,10 @@ sudo service nginx restart  设置自动更新证书 由于Let&amp;rsquo;s Encry
     
     <item>
       <title>搜索引擎优化</title>
-      <link>http://eiuapp.github.io/learning-hugo/installation/seo.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/installation/seo.html</link>
       <pubDate>Mon, 10 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/installation/seo.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/installation/seo.html</guid>
       <description> 为了让Hugo网站更好的被搜索引擎收录，需要进行搜索引擎优化（SEO）。
 站点内容优化 修改配置 修改 hugo/config/_default 目录下的 params.toml 文件：
 description = &amp;quot;敖小剑的个人技术博客网站，主要关注服务网格,serverless,kubernetes,微服务等云原生技术。&amp;quot;  修改模板 0.54 版本下基本做的很好了，不再修改。

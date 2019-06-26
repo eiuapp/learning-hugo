@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo学习笔记</title>
-    <link>http://eiuapp.github.io/learning-hugo/theme.html</link>
+    <link>https://eiuapp.github.io/learning-hugo/theme.html</link>
     <description>Recent content on Hugo学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 09 Sep 2018 21:07:13 +0100</lastBuildDate>
     
-	<atom:link href="http://eiuapp.github.io/learning-hugo/theme/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://eiuapp.github.io/learning-hugo/theme/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>主题</title>
-      <link>http://eiuapp.github.io/learning-hugo/theme/</link>
+      <link>https://eiuapp.github.io/learning-hugo/theme/</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/theme/</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/theme/</guid>
       <description>Hugo有非常丰富的主题。
 后面会列出一些个人觉得不错的Hugo主题，然后重点推荐两个我自己在用的主题：
  academic主题：用于我的个人博客网站 material-docs主题：用于我的学习笔记  </description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>academic主题</title>
-      <link>http://eiuapp.github.io/learning-hugo/theme/academic.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/theme/academic.html</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/theme/academic.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/theme/academic.html</guid>
       <description>主题介绍 academic是一个特别适合搭建内容相对比较丰富的网站的主题，如果我们hugo网站的内容不仅仅是博客，还有其他好几种样式的内容，那么academic会是一个很不错的选择。此外，academic主题简洁大方，也适合作为一个稍有规模的正式网站。
  官网介绍：https://themes.gohugo.io/academic/ 我用academic主题搭建的个人技术博客网站: https://skyao.io  准备工作 git仓库准备 以建立skyao.io这个网站为例，fork github项目：
  https://github.com/gcushen/hugo-academic: 修改仓库名为hugo-academic，这是自行订制的主题仓库，加cn后缀名以示区别。 https://github.com/sourcethemes/academic-kickstart: 修改仓库名为skyao.io，这是存放站点内容的仓库，为了方便起见，从官方的kickstart仓库开始改起，也方便未来保持更新。   备注：实际证明，academic的版本变化非常大，fork出来之后，再修改，到升级版本时到处是冲突，极易出错，很难正确处理。最后还是不得不从头来过：取到最新版本，然后手工将原有的改动重新再做一遍。
@@ -40,10 +40,10 @@
     
     <item>
       <title>material-docs主题</title>
-      <link>http://eiuapp.github.io/learning-hugo/theme/material-docs.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/theme/material-docs.html</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/theme/material-docs.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/theme/material-docs.html</guid>
       <description>主题介绍 material-docs官网：
 http://themes.gohugo.io/theme/material-docs/
 这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。
@@ -63,10 +63,10 @@ cd themes/hugo-material-docs # 复制config.toml文件 cp config.toml ../../../c
     
     <item>
       <title>主题列表</title>
-      <link>http://eiuapp.github.io/learning-hugo/theme/theme.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/theme/theme.html</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/theme/theme.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/theme/theme.html</guid>
       <description> 在这里列出一些个人觉得不错的Hugo主题。
 门户类 文档类 可以看官网的分类：
 https://themes.gohugo.io/tags/documentation/
@@ -102,10 +102,10 @@ https://themes.gohugo.io/kube/
     
     <item>
       <title>主题比较</title>
-      <link>http://eiuapp.github.io/learning-hugo/theme/theme-compare.html</link>
+      <link>https://eiuapp.github.io/learning-hugo/theme/theme-compare.html</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0800</pubDate>
       
-      <guid>http://eiuapp.github.io/learning-hugo/theme/theme-compare.html</guid>
+      <guid>https://eiuapp.github.io/learning-hugo/theme/theme-compare.html</guid>
       <description>在这里列出一些个人觉得不错的Hugo主题。
 门户类 文档类 可以看官网的分类：
 https://themes.gohugo.io/tags/documentation/
