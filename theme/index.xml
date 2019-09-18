@@ -23,6 +23,22 @@
     </item>
     
     <item>
+      <title>hugo-book主题</title>
+      <link>https://eiuapp.github.io/learning-hugo/theme/hugo-book.html</link>
+      <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
+      
+      <guid>https://eiuapp.github.io/learning-hugo/theme/hugo-book.html</guid>
+      <description> 主题介绍 hugo-book官网：
+https://themes.gohugo.io/theme/hugo-book/
+https://github.com/alex-shpak/hugo-book
+优点：
+ 类 gitbook 有 menu 。再也不用过度思考weight应该怎么设置了。hugo-theme-learn就是这个地方不方便。 左边的导航栏支持多级菜单  缺点：
+ 搜索不支持中文 移动端不支持搜索  这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。
+我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hugo学习笔记用的就是此主题。
+准备工作 </description>
+    </item>
+    
+    <item>
       <title>academic主题</title>
       <link>https://eiuapp.github.io/learning-hugo/theme/academic.html</link>
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
