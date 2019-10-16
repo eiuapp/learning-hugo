@@ -128,14 +128,15 @@ title: 前言 keywords: - hugo - 学习笔记 - hugo学习笔记 description : &
       <pubDate>Sun, 09 Sep 2018 21:07:13 +0100</pubDate>
       
       <guid>https://eiuapp.github.io/learning-hugo/theme/hugo-book.html</guid>
-      <description> 主题介绍 hugo-book官网：
+      <description>主题介绍 hugo-book官网：
 https://themes.gohugo.io/theme/hugo-book/
 https://github.com/alex-shpak/hugo-book
 优点：
  类 gitbook 有 menu 。再也不用过度思考weight应该怎么设置了。hugo-theme-learn就是这个地方不方便。 左边的导航栏支持多级菜单  缺点：
  搜索不支持中文 移动端不支持搜索  这个主题非常适合用于文档，左边的导航栏支持多级菜单，样式也简单美观，而且对移动设备支持很好。
 我主要用它来做学习笔记，替代之前长期使用的gitbook（gitbook的问题主要是本地生成内容速度太慢，而gitbook官方网站访问速度又不好）。当前这个hugo学习笔记用的就是此主题。
-准备工作 </description>
+使用者示例  https://github.com/solareenlo/blog-hugo  准备工作 安装 hugo_extended 版本 如果不安装，会报下面错误
+DESKTOP-APB1HCJ% hugo serve Building sites … WARN 2019/10/16 17:41:53 found no layout file for &amp;quot;HTML&amp;quot; for &amp;quot;page&amp;quot;: You should create a template file which matches Hugo Layouts Lookup Rules for this combination. ERROR 2019/10/16 17:41:53 Transformation failed: TOCSS: failed to transform &amp;quot;book.</description>
     </item>
     
     <item>
