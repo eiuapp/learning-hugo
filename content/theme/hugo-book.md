@@ -37,7 +37,7 @@ https://github.com/alex-shpak/hugo-book
 
 ## 使用者示例
 
-- https://github.com/solareenlo/blog-hugo
+- https://github.com/solareenlo/blog-hugo  这里的 [.gitmodules](https://github.com/solareenlo/blog-hugo/blob/master/.gitmodules) 文件，可以方便切换 themes , 以及 book-ori 与 book-fork 区分 hugo-book 主题 的定制问题
 
 ## 准备工作
 
